@@ -30,3 +30,6 @@ pnpm-debug.log*
 # claude code — local settings and installed skills (reinstallable from .10x-cli-manifest.json)
 .claude/settings.local.json
 .claude/skills/
+
+# personal notes
+my-notes.md
