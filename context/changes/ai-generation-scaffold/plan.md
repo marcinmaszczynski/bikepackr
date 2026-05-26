@@ -359,21 +359,21 @@ import { GenerateTest } from "@/components/GenerateTest";
 
 #### Automated
 
-- [x] 1.1 `npm install ai @ai-sdk/anthropic` — pakiety zainstalowane w dependencies
-- [x] 1.2 ANTHROPIC_API_KEY dodany do env schema w astro.config.mjs
-- [x] 1.3 `npm run lint` przechodzi bez błędów TypeScript
+- [x] 1.1 `npm install ai @ai-sdk/anthropic` — pakiety zainstalowane w dependencies — d4da535
+- [x] 1.2 ANTHROPIC_API_KEY dodany do env schema w astro.config.mjs — d4da535
+- [x] 1.3 `npm run lint` przechodzi bez błędów TypeScript — d4da535
 
 #### Manual
 
-- [x] 1.4 `package.json` zawiera `ai` i `@ai-sdk/anthropic` w dependencies
-- [x] 1.5 Użytkownik dodał `ANTHROPIC_API_KEY=<wartość>` do `.dev.vars`
+- [x] 1.4 `package.json` zawiera `ai` i `@ai-sdk/anthropic` w dependencies — d4da535
+- [x] 1.5 Użytkownik dodał `ANTHROPIC_API_KEY=<wartość>` do `.dev.vars` — d4da535
 
 ### Phase 2: Hard-rules module
 
 #### Automated
 
-- [ ] 2.1 `src/lib/hard-rules.ts` istnieje z poprawnymi typami i eksportami
-- [ ] 2.2 `npm run lint` przechodzi bez błędów TypeScript
+- [x] 2.1 `src/lib/hard-rules.ts` istnieje z poprawnymi typami i eksportami
+- [x] 2.2 `npm run lint` przechodzi bez błędów TypeScript
 
 ### Phase 3: Streaming endpoint + test page
 
