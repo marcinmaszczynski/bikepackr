@@ -258,11 +258,11 @@ Migracja jest nie-destrukcyjna (tworzy nowe tabele, nie modyfikuje istniejących
 
 #### Automated
 
-- [x] 2.1 `npm run lint` przechodzi bez błędów TypeScript
-- [x] 2.2 `src/lib/database.types.ts` istnieje i zawiera `trips` oraz `checklist_items`
+- [x] 2.1 `npm run lint` przechodzi bez błędów TypeScript — a38da38
+- [x] 2.2 `src/lib/database.types.ts` istnieje i zawiera `trips` oraz `checklist_items` — a38da38
 
 #### Manual
 
-- [x] 2.3 Remote Dashboard pokazuje obie tabele z poprawnymi kolumnami
-- [x] 2.4 Remote Policies: 4 polityki na `trips`, 4 na `checklist_items`
-- [x] 2.5 Import `Trip` i `ChecklistItem` z `@/lib/supabase` nie powoduje błędu TS
+- [x] 2.3 Remote Dashboard pokazuje obie tabele z poprawnymi kolumnami — a38da38
+- [x] 2.4 Remote Policies: 4 polityki na `trips`, 4 na `checklist_items` — a38da38
+- [x] 2.5 Import `Trip` i `ChecklistItem` z `@/lib/supabase` nie powoduje błędu TS — a38da38
