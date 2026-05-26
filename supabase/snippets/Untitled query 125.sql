@@ -1,0 +1,2 @@
+INSERT INTO trips (user_id, start_date, accommodation_type, riding_philosophy, region, trip_duration_days)
+  VALUES ('00000000-0000-0000-0000-000000000000', '2026-06-01', 'tent', 'fast_and_light', 'Poland', 5);
