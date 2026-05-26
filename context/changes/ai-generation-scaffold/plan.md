@@ -372,22 +372,22 @@ import { GenerateTest } from "@/components/GenerateTest";
 
 #### Automated
 
-- [x] 2.1 `src/lib/hard-rules.ts` istnieje z poprawnymi typami i eksportami
-- [x] 2.2 `npm run lint` przechodzi bez błędów TypeScript
+- [x] 2.1 `src/lib/hard-rules.ts` istnieje z poprawnymi typami i eksportami — ef935d3
+- [x] 2.2 `npm run lint` przechodzi bez błędów TypeScript — ef935d3
 
 ### Phase 3: Streaming endpoint + test page
 
 #### Automated
 
-- [ ] 3.1 `src/pages/api/generate/test.ts` istnieje i eksportuje `POST: APIRoute`
-- [ ] 3.2 `src/components/GenerateTest.tsx` istnieje i eksportuje `GenerateTest`
-- [ ] 3.3 `src/pages/generate/test.astro` istnieje i importuje `GenerateTest` z `client:load`
-- [ ] 3.4 `npm run lint` przechodzi bez błędów TypeScript
-- [ ] 3.5 `npm run build` kończy się sukcesem
+- [x] 3.1 `src/pages/api/generate/test.ts` istnieje i eksportuje `POST: APIRoute`
+- [x] 3.2 `src/components/GenerateTest.tsx` istnieje i eksportuje `GenerateTest`
+- [x] 3.3 `src/pages/generate/test.astro` istnieje i importuje `GenerateTest` z `client:load`
+- [x] 3.4 `npm run lint` przechodzi bez błędów TypeScript
+- [x] 3.5 `npm run build` kończy się sukcesem
 
 #### Manual
 
-- [ ] 3.6 Strona `/generate/test` ładuje się poprawnie w przeglądarce
-- [ ] 3.7 Po kliknięciu "Generate" tokeny pojawiają się stopniowo w real-time (streaming widoczny wizualnie)
-- [ ] 3.8 Pełna odpowiedź pojawia się w ciągu 30 sekund — NFR spełniony
-- [ ] 3.9 Licznik czasu wyświetla się po zakończeniu streamingu
+- [x] 3.6 Strona `/generate/test` ładuje się poprawnie w przeglądarce
+- [x] 3.7 Po kliknięciu "Generate" tokeny pojawiają się stopniowo w real-time (streaming widoczny wizualnie)
+- [x] 3.8 Pełna odpowiedź pojawia się w ciągu 30 sekund — NFR spełniony
+- [x] 3.9 Licznik czasu wyświetla się po zakończeniu streamingu
