@@ -196,7 +196,7 @@ export type ChecklistItem = Database["public"]["Tables"]["checklist_items"]["Row
 
 **Intent**: Upewnić się, że remote Supabase (projekt `rhfjnksirzyvpzcfnklz`) ma identyczny schemat co lokalne środowisko.
 
-**Contract**: Przed pushem projekt musi być zlinkowany: `supabase link --project-ref rhfjnksirzyvpzcfnklz`. Następnie: `supabase db push`.
+**Contract**: CLI musi być uwierzytelniony (weryfikacja: `supabase projects list`). Jeśli zwraca "Access token not provided", uruchom najpierw `supabase login`. Następnie zlinkuj projekt: `supabase link --project-ref rhfjnksirzyvpzcfnklz`. Na końcu: `supabase db push`.
 
 ### Success Criteria:
 
@@ -245,24 +245,24 @@ Migracja jest nie-destrukcyjna (tworzy nowe tabele, nie modyfikuje istniejących
 
 #### Automated
 
-- [x] 1.1 Migracja lokalnie wykonuje się bez błędów: `supabase db reset`
-- [x] 1.2 `supabase db diff` nie zgłasza dryftu po resecie
+- [x] 1.1 Migracja lokalnie wykonuje się bez błędów: `supabase db reset` — 642aa1a
+- [x] 1.2 `supabase db diff` nie zgłasza dryftu po resecie — 642aa1a
 
 #### Manual
 
-- [x] 1.3 Studio pokazuje tabele `trips` i `checklist_items` ze wszystkimi kolumnami
-- [x] 1.4 Obie tabele mają po 4 polityki RLS w Studio
-- [x] 1.5 Wstawienie rekordu z cudzym `user_id` zwraca błąd RLS
+- [x] 1.3 Studio pokazuje tabele `trips` i `checklist_items` ze wszystkimi kolumnami — 642aa1a
+- [x] 1.4 Obie tabele mają po 4 polityki RLS w Studio — 642aa1a
+- [x] 1.5 Wstawienie rekordu z cudzym `user_id` zwraca błąd RLS — 642aa1a
 
 ### Phase 2: Typy TypeScript + wdrożenie remote
 
 #### Automated
 
-- [ ] 2.1 `npm run lint` przechodzi bez błędów TypeScript
-- [ ] 2.2 `src/lib/database.types.ts` istnieje i zawiera `trips` oraz `checklist_items`
+- [x] 2.1 `npm run lint` przechodzi bez błędów TypeScript
+- [x] 2.2 `src/lib/database.types.ts` istnieje i zawiera `trips` oraz `checklist_items`
 
 #### Manual
 
-- [ ] 2.3 Remote Dashboard pokazuje obie tabele z poprawnymi kolumnami
-- [ ] 2.4 Remote Policies: 4 polityki na `trips`, 4 na `checklist_items`
-- [ ] 2.5 Import `Trip` i `ChecklistItem` z `@/lib/supabase` nie powoduje błędu TS
+- [x] 2.3 Remote Dashboard pokazuje obie tabele z poprawnymi kolumnami
+- [x] 2.4 Remote Policies: 4 polityki na `trips`, 4 na `checklist_items`
+- [x] 2.5 Import `Trip` i `ChecklistItem` z `@/lib/supabase` nie powoduje błędu TS
