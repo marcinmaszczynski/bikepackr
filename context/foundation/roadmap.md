@@ -27,7 +27,7 @@ Bikepackr rozwiązuje konkretny problem bikepackerów: każdy wyjazd wymaga dopa
 
 | ID    | Change ID               | Outcome (user can …)                                              | Prerequisites | PRD refs                  | Status   |
 | ----- | ----------------------- | ----------------------------------------------------------------- | ------------- | ------------------------- | -------- |
-| F-01  | trip-plan-schema        | (foundation) tabele DB dla planów i pozycji checklisty gotowe     | —             | FR-005, FR-006, FR-009    | ready    |
+| F-01  | trip-plan-schema        | (foundation) tabele DB dla planów i pozycji checklisty gotowe     | —             | FR-005, FR-006, FR-009    | done     |
 | F-02  | ai-generation-scaffold  | (foundation) SDK AI wybrany, streaming na Workers przetestowany   | —             | FR-006                    | done     |
 | S-01  | first-gated-generation  | wypełnić kontekst wyjazdu i zobaczyć checklistę z AI              | F-01, F-02    | US-01, FR-005, FR-006     | proposed |
 | S-02  | checklist-edit-and-pack | edytować checklistę i zaznaczać pozycje jako spakowane            | S-01          | FR-007, FR-008            | proposed |
@@ -69,7 +69,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Zbyt wąski schemat (np. płaska lista itemów bez kategorii) utrudni S-02 i S-03; `/10x-plan` powinien zdecydować o strukturze tabel przed pierwszą migracją — nie skaluj zbytnio w górę, ale nie zapomnij o RLS.
-- **Status:** ready
+- **Status:** done
 
 ---
 
@@ -204,3 +204,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 (Empty on first generation. `/10x-archive` appends an entry here — and flips that item's `Status` to `done` — when a change whose `Change ID` matches the item is archived.)
 
 - **F-02: (foundation) SDK AI wybrany, streaming na Workers przetestowany** — Archived 2026-05-27 → `context/archive/2026-05-26-ai-generation-scaffold/`. Lesson: —.
+- **F-01: (foundation) tabele DB dla planów i pozycji checklisty gotowe** — Archived 2026-05-27 → `context/archive/2026-05-26-trip-plan-schema/`. Lesson: —.
