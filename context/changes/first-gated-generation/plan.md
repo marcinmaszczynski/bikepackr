@@ -403,16 +403,16 @@ import { TripContextForm } from "@/components/TripContextForm";
 
 #### Automated
 
-- [x] 3.1 `npm run lint` przechodzi bez błędów TypeScript
-- [x] 3.2 `npm run build` kończy się sukcesem
+- [x] 3.1 `npm run lint` przechodzi bez błędów TypeScript — 72304fc
+- [x] 3.2 `npm run build` kończy się sukcesem — 72304fc
 
 #### Manual
 
-- [x] 3.3 `/trips/new` bez sesji → redirect do `/auth/signin`
-- [x] 3.4 Formularz renderuje się poprawnie z wszystkimi wymaganymi polami
-- [x] 3.5 Submit z pustymi polami → pola wymagane zablokowane przez HTML5 validation
-- [x] 3.6 Pełny flow end-to-end: submit → streaming → structured view z kategoriami
-- [x] 3.7 NFR: ciągły progress wizualny podczas generowania (tokeny pojawiają się stopniowo)
-- [x] 3.8 NFR: wynik pojawia się w < 30 s
-- [x] 3.9 Disclaimer "Lista wygenerowana przez AI — może być niepełna" widoczny
-- [x] 3.10 Reguły sztywne poprawnie odwzorowane w UI (weryfikacja end-to-end)
+- [x] 3.3 `/trips/new` bez sesji → redirect do `/auth/signin` — 72304fc
+- [x] 3.4 Formularz renderuje się poprawnie z wszystkimi wymaganymi polami — 72304fc
+- [x] 3.5 Submit z pustymi polami → pola wymagane zablokowane przez HTML5 validation — 72304fc
+- [x] 3.6 Pełny flow end-to-end: submit → streaming → structured view z kategoriami — 72304fc
+- [x] 3.7 NFR: ciągły progress wizualny podczas generowania (tokeny pojawiają się stopniowo) — 72304fc
+- [x] 3.8 NFR: wynik pojawia się w < 30 s — 72304fc
+- [x] 3.9 Disclaimer "Lista wygenerowana przez AI — może być niepełna" widoczny — 72304fc
+- [x] 3.10 Reguły sztywne poprawnie odwzorowane w UI (weryfikacja end-to-end) — 72304fc
