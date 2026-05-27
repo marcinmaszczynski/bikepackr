@@ -386,33 +386,33 @@ import { TripContextForm } from "@/components/TripContextForm";
 
 #### Automated
 
-- [x] 2.1 `npm run lint` przechodzi bez błędów TypeScript
-- [x] 2.2 `npm run build` kończy się sukcesem
-- [x] 2.3 Tymczasowe pliki F-02 (`generate/test.astro`, `api/generate/test.ts`, `GenerateTest.tsx`) nie istnieją
+- [x] 2.1 `npm run lint` przechodzi bez błędów TypeScript — b76b43b
+- [x] 2.2 `npm run build` kończy się sukcesem — b76b43b
+- [x] 2.3 Tymczasowe pliki F-02 (`generate/test.astro`, `api/generate/test.ts`, `GenerateTest.tsx`) nie istnieją — b76b43b
 
 #### Manual
 
-- [x] 2.4 `POST /api/generate/checklist` bez auth zwraca 401
-- [x] 2.5 Endpoint strumieniuje polski markdown
-- [x] 2.6 Response header `X-Trip-Id` obecny w odpowiedzi
-- [x] 2.7 Po zakończeniu strumienia: rekord w `trips` w Supabase
-- [x] 2.8 `GET /api/trips/:id/items-count` zwraca `count > 0` po zakończeniu strumienia
-- [x] 2.9 Reguły sztywne odzwierciedlone w wygenerowanej liście (namiot → śpiwór+mata, fast_and_light → brak krzesła)
+- [x] 2.4 `POST /api/generate/checklist` bez auth zwraca 401 — b76b43b
+- [x] 2.5 Endpoint strumieniuje polski markdown — b76b43b
+- [x] 2.6 Response header `X-Trip-Id` obecny w odpowiedzi — b76b43b
+- [x] 2.7 Po zakończeniu strumienia: rekord w `trips` w Supabase — b76b43b
+- [x] 2.8 `GET /api/trips/:id/items-count` zwraca `count > 0` po zakończeniu strumienia — b76b43b
+- [x] 2.9 Reguły sztywne odzwierciedlone w wygenerowanej liście (namiot → śpiwór+mata, fast_and_light → brak krzesła) — b76b43b
 
 ### Phase 3: Trip context form + streaming UI
 
 #### Automated
 
-- [ ] 3.1 `npm run lint` przechodzi bez błędów TypeScript
-- [ ] 3.2 `npm run build` kończy się sukcesem
+- [x] 3.1 `npm run lint` przechodzi bez błędów TypeScript
+- [x] 3.2 `npm run build` kończy się sukcesem
 
 #### Manual
 
-- [ ] 3.3 `/trips/new` bez sesji → redirect do `/auth/signin`
-- [ ] 3.4 Formularz renderuje się poprawnie z wszystkimi wymaganymi polami
-- [ ] 3.5 Submit z pustymi polami → pola wymagane zablokowane przez HTML5 validation
-- [ ] 3.6 Pełny flow end-to-end: submit → streaming → structured view z kategoriami
-- [ ] 3.7 NFR: ciągły progress wizualny podczas generowania (tokeny pojawiają się stopniowo)
-- [ ] 3.8 NFR: wynik pojawia się w < 30 s
-- [ ] 3.9 Disclaimer "Lista wygenerowana przez AI — może być niepełna" widoczny
-- [ ] 3.10 Reguły sztywne poprawnie odwzorowane w UI (weryfikacja end-to-end)
+- [x] 3.3 `/trips/new` bez sesji → redirect do `/auth/signin`
+- [x] 3.4 Formularz renderuje się poprawnie z wszystkimi wymaganymi polami
+- [x] 3.5 Submit z pustymi polami → pola wymagane zablokowane przez HTML5 validation
+- [x] 3.6 Pełny flow end-to-end: submit → streaming → structured view z kategoriami
+- [x] 3.7 NFR: ciągły progress wizualny podczas generowania (tokeny pojawiają się stopniowo)
+- [x] 3.8 NFR: wynik pojawia się w < 30 s
+- [x] 3.9 Disclaimer "Lista wygenerowana przez AI — może być niepełna" widoczny
+- [x] 3.10 Reguły sztywne poprawnie odwzorowane w UI (weryfikacja end-to-end)
