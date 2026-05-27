@@ -374,30 +374,30 @@ import { TripContextForm } from "@/components/TripContextForm";
 
 #### Automated
 
-- [x] 1.1 `npm run lint` przechodzi bez błędów TypeScript
+- [x] 1.1 `npm run lint` przechodzi bez błędów TypeScript — 401281e
 
 #### Manual
 
-- [x] 1.2 `evaluateHardRules({ accommodation_type: 'tent', riding_philosophy: 'fast_and_light' })` zwraca wymagane: śpiwór + mata, wykluczone: krzesło + stolik
-- [x] 1.3 `evaluateHardRules({ accommodation_type: 'hostel', riding_philosophy: 'expedition' })` zwraca niezmienioną regułę hostelową
-- [x] 1.4 `evaluateHardRules({ accommodation_type: 'hotel', riding_philosophy: 'expedition' })` zwraca puste arrays
+- [x] 1.2 `evaluateHardRules({ accommodation_type: 'tent', riding_philosophy: 'fast_and_light' })` zwraca wymagane: śpiwór + mata, wykluczone: krzesło + stolik — 401281e
+- [x] 1.3 `evaluateHardRules({ accommodation_type: 'hostel', riding_philosophy: 'expedition' })` zwraca niezmienioną regułę hostelową — 401281e
+- [x] 1.4 `evaluateHardRules({ accommodation_type: 'hotel', riding_philosophy: 'expedition' })` zwraca puste arrays — 401281e
 
 ### Phase 2: AI generation endpoint
 
 #### Automated
 
-- [ ] 2.1 `npm run lint` przechodzi bez błędów TypeScript
-- [ ] 2.2 `npm run build` kończy się sukcesem
-- [ ] 2.3 Tymczasowe pliki F-02 (`generate/test.astro`, `api/generate/test.ts`, `GenerateTest.tsx`) nie istnieją
+- [x] 2.1 `npm run lint` przechodzi bez błędów TypeScript
+- [x] 2.2 `npm run build` kończy się sukcesem
+- [x] 2.3 Tymczasowe pliki F-02 (`generate/test.astro`, `api/generate/test.ts`, `GenerateTest.tsx`) nie istnieją
 
 #### Manual
 
-- [ ] 2.4 `POST /api/generate/checklist` bez auth zwraca 401
-- [ ] 2.5 Endpoint strumieniuje polski markdown
-- [ ] 2.6 Response header `X-Trip-Id` obecny w odpowiedzi
-- [ ] 2.7 Po zakończeniu strumienia: rekord w `trips` w Supabase
-- [ ] 2.8 `GET /api/trips/:id/items-count` zwraca `count > 0` po zakończeniu strumienia
-- [ ] 2.9 Reguły sztywne odzwierciedlone w wygenerowanej liście (namiot → śpiwór+mata, fast_and_light → brak krzesła)
+- [x] 2.4 `POST /api/generate/checklist` bez auth zwraca 401
+- [x] 2.5 Endpoint strumieniuje polski markdown
+- [x] 2.6 Response header `X-Trip-Id` obecny w odpowiedzi
+- [x] 2.7 Po zakończeniu strumienia: rekord w `trips` w Supabase
+- [x] 2.8 `GET /api/trips/:id/items-count` zwraca `count > 0` po zakończeniu strumienia
+- [x] 2.9 Reguły sztywne odzwierciedlone w wygenerowanej liście (namiot → śpiwór+mata, fast_and_light → brak krzesła)
 
 ### Phase 3: Trip context form + streaming UI
 
