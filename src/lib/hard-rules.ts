@@ -16,6 +16,14 @@ export function evaluateHardRules(context: HardRuleContext): HardRuleResult {
     required.push("sleep sack / liner");
   }
 
+  if (["tent", "hammock", "bivy"].includes(context.accommodation_type)) {
+    required.push("śpiwór", "karimat / mata do spania");
+  }
+
+  if (context.riding_philosophy === "fast_and_light") {
+    excluded.push("krzesło campingowe", "stolik campingowy");
+  }
+
   return { excluded, required };
 }
 
