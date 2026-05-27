@@ -13,6 +13,11 @@ export const GET: APIRoute = async (context) => {
 
   const id = context.params.id ?? "";
 
+  const { data: trip, error: tripError } = await supabase.from("trips").select("id").eq("id", id).single();
+  if (tripError || !trip) {
+    return new Response("Not found", { status: 404 });
+  }
+
   const { count, error } = await supabase
     .from("checklist_items")
     .select("*", { count: "exact", head: true })

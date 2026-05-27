@@ -1,7 +1,7 @@
 ---
 change_id: first-gated-generation
 title: Trip context form → AI checklist generation (S-01 ★)
-status: implemented
+status: impl_reviewed
 created: 2026-05-27
 updated: 2026-05-27
 archived_at: null

@@ -12,8 +12,8 @@ export function evaluateHardRules(context: HardRuleContext): HardRuleResult {
   const required: string[] = [];
 
   if (context.accommodation_type === "hostel") {
-    excluded.push("sleeping bag", "camping mattress", "tent");
-    required.push("sleep sack / liner");
+    excluded.push("śpiwór", "karimat / mata do spania", "namiot");
+    required.push("wkład do śpiwora / prześcieradło turystyczne");
   }
 
   if (["tent", "hammock", "bivy"].includes(context.accommodation_type)) {
