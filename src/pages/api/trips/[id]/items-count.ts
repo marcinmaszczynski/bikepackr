@@ -14,7 +14,7 @@ export const GET: APIRoute = async (context) => {
   const id = context.params.id ?? "";
 
   const { data: trip, error: tripError } = await supabase.from("trips").select("id").eq("id", id).single();
-  if (tripError || !trip) {
+  if (tripError) {
     return new Response("Not found", { status: 404 });
   }
 
