@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ProfileForm from "@/components/ProfileForm";
+import Topbar from "@/components/Topbar.astro";
+
+const { user } = Astro.locals;
+const displayName = (user?.user_metadata.display_name as string | undefined) ?? "";
+const success = Astro.url.searchParams.get("success");
+const error = Astro.url.searchParams.get("error");
+const successType = success === "name" || success === "password" ? success : undefined;
+---
+
+<Layout title="Profil">
+  <div class="bg-cosmic min-h-screen p-4 text-white">
+    <div class="mx-auto max-w-lg">
+      <Topbar />
+      <h1 class="mb-8 text-2xl font-bold">Profil</h1>
+      <ProfileForm displayName={displayName} successType={successType} serverError={error ?? undefined} client:load />
+    </div>
+  </div>
+</Layout>

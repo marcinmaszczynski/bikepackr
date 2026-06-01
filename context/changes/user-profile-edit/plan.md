@@ -207,27 +207,27 @@ Brak migracji DB. Display name trafia do `auth.users.raw_user_meta_data` przez S
 
 #### Automated
 
-- [x] 1.1 Lint przechodzi bez błędów: `npm run lint`
-- [x] 1.2 Build przechodzi: `npm run build`
+- [x] 1.1 Lint przechodzi bez błędów: `npm run lint` — b2f9f73
+- [x] 1.2 Build przechodzi: `npm run build` — b2f9f73
 
 #### Manual
 
-- [x] 1.3 Po rejestracji nowego konta użytkownik ląduje na `/dashboard`, nie na `/auth/confirm-email`
-- [x] 1.4 Dashboard niezweryfikowanego konta pokazuje żółty baner weryfikacyjny
-- [x] 1.5 Niezalogowany użytkownik wchodzący na `/profile` jest przekierowany na `/auth/signin`
+- [x] 1.3 Po rejestracji nowego konta użytkownik ląduje na `/dashboard`, nie na `/auth/confirm-email` — b2f9f73
+- [x] 1.4 Dashboard niezweryfikowanego konta pokazuje żółty baner weryfikacyjny — b2f9f73
+- [x] 1.5 Niezalogowany użytkownik wchodzący na `/profile` jest przekierowany na `/auth/signin` — b2f9f73
 
 ### Phase 2: Profile edit page
 
 #### Automated
 
-- [ ] 2.1 TypeScript nie zgłasza błędów: `npm run lint`
-- [ ] 2.2 Build produkcyjny przechodzi: `npm run build`
+- [x] 2.1 TypeScript nie zgłasza błędów: `npm run lint`
+- [x] 2.2 Build produkcyjny przechodzi: `npm run build`
 
 #### Manual
 
-- [ ] 2.3 `/profile` ładuje się z pre-wypełnionym display name
-- [ ] 2.4 Zapisanie display name → Topbar pokazuje nową nazwę
-- [ ] 2.5 Zmiana hasła z błędnym obecnym hasłem → komunikat błędu
-- [ ] 2.6 Zmiana hasła poprawna → redirect z sukcesem; użytkownik pozostaje zalogowany
-- [ ] 2.7 Email w Topbar jest linkiem do `/profile`
-- [ ] 2.8 Pełne flow end-to-end: rejestracja → profil → zmiana hasła → re-login
+- [x] 2.3 `/profile` ładuje się z pre-wypełnionym display name
+- [x] 2.4 Zapisanie display name → Topbar pokazuje nową nazwę
+- [x] 2.5 Zmiana hasła z błędnym obecnym hasłem → komunikat błędu
+- [x] 2.6 Zmiana hasła poprawna → redirect z sukcesem; użytkownik pozostaje zalogowany
+- [x] 2.7 Email w Topbar jest linkiem do `/profile`
+- [x] 2.8 Pełne flow end-to-end: rejestracja → profil → zmiana hasła → re-login

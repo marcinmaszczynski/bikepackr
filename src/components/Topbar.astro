@@ -8,7 +8,9 @@ const { user } = Astro.locals;
   {
     user ? (
       <>
-        <span class="text-blue-100/70">{user.email}</span>
+        <a href="/profile" class="text-blue-100/70 hover:underline">
+          {user.user_metadata.display_name ?? user.email}
+        </a>
         <div class="flex items-center gap-3">
           <a href="/dashboard" class="text-purple-300 transition-colors hover:text-purple-100 hover:underline">
             Dashboard
