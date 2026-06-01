@@ -15,6 +15,7 @@ export function ChecklistView({ trip, initialItems }: Props): React.JSX.Element 
   const [newName, setNewName] = useState("");
   const [newCategory, setNewCategory] = useState("");
   const [isAdding, setIsAdding] = useState(false);
+  const [isDeletingId, setIsDeletingId] = useState<string | null>(null);
 
   const grouped = items.reduce<Record<string, ChecklistItem[]>>((acc, item) => {
     (acc[item.category] ??= []).push(item);
@@ -43,12 +44,15 @@ export function ChecklistView({ trip, initialItems }: Props): React.JSX.Element 
   }
 
   async function handleDelete(item: ChecklistItem) {
+    setIsDeletingId(item.id);
     try {
       const res = await fetch(`/api/trips/${trip.id}/items/${item.id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Nie udało się usunąć pozycji.");
       setItems((prev) => prev.filter((i) => i.id !== item.id));
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Błąd.");
+    } finally {
+      setIsDeletingId(null);
     }
   }
 
@@ -116,7 +120,8 @@ export function ChecklistView({ trip, initialItems }: Props): React.JSX.Element 
                   onClick={() => {
                     void handleDelete(item);
                   }}
-                  className="ml-auto shrink-0 text-white/30 transition-colors hover:text-red-400"
+                  disabled={isDeletingId === item.id}
+                  className="ml-auto shrink-0 text-white/30 transition-colors hover:text-red-400 disabled:opacity-40"
                   aria-label={`Usuń ${item.name}`}
                 >
                   ×

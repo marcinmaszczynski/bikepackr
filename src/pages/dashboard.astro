@@ -11,15 +11,15 @@ const accommodationLabels: Record<string, string> = {
 };
 
 const supabase = createClient(Astro.request.headers, Astro.cookies);
+if (!supabase) return Astro.redirect("/");
 
-const trips = supabase
-  ? ((
-      await supabase
-        .from("trips")
-        .select("id, title, start_date, accommodation_type, created_at")
-        .order("created_at", { ascending: false })
-    ).data ?? [])
-  : [];
+const trips =
+  (
+    await supabase
+      .from("trips")
+      .select("id, title, start_date, accommodation_type, created_at")
+      .order("created_at", { ascending: false })
+  ).data ?? [];
 ---
 
 <Layout title="Dashboard — Bikepackr">

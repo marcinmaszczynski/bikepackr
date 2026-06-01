@@ -11,6 +11,7 @@ export const PATCH: APIRoute = async (context) => {
     return new Response("Supabase not configured", { status: 503 });
   }
 
+  const tripId = context.params.id ?? "";
   const itemId = context.params.itemId ?? "";
 
   let body: unknown;
@@ -29,6 +30,7 @@ export const PATCH: APIRoute = async (context) => {
   const { data, error } = await supabase
     .from("checklist_items")
     .update({ is_packed })
+    .eq("trip_id", tripId)
     .eq("id", itemId)
     .select()
     .single();
@@ -50,9 +52,16 @@ export const DELETE: APIRoute = async (context) => {
     return new Response("Supabase not configured", { status: 503 });
   }
 
+  const tripId = context.params.id ?? "";
   const itemId = context.params.itemId ?? "";
 
-  const { data: _data, error } = await supabase.from("checklist_items").delete().eq("id", itemId).select().single();
+  const { data: _data, error } = await supabase
+    .from("checklist_items")
+    .delete()
+    .eq("trip_id", tripId)
+    .eq("id", itemId)
+    .select()
+    .single();
 
   if (error) {
     return new Response("Not found", { status: 404 });
