@@ -219,41 +219,41 @@ Update dashboard to show a plan list with "Nowy plan" entry point. Update TripCo
 
 #### Manual
 
-- [ ] 1.3 POST valid item → 201 + correct DB row
-- [ ] 1.4 POST with missing fields → 400
-- [ ] 1.5 POST with wrong trip ID → 404
-- [ ] 1.6 PATCH `is_packed` → DB updated
-- [ ] 1.7 DELETE item → 204 + row gone
-- [ ] 1.8 PATCH/DELETE wrong itemId → 404
+- [x] 1.3 POST valid item → 201 + correct DB row — 3c80351
+- [x] 1.4 POST with missing fields → 400 — 3c80351
+- [x] 1.5 POST with wrong trip ID → 404 — 3c80351
+- [x] 1.6 PATCH `is_packed` → DB updated — 3c80351
+- [x] 1.7 DELETE item → 204 + row gone — 3c80351
+- [x] 1.8 PATCH/DELETE wrong itemId → 404 — 3c80351
 
 ### Phase 2: Trip Detail Page + ChecklistView Component
 
 #### Automated
 
-- [x] 2.1 Build passes: `npm run build`
-- [x] 2.2 Lint passes: `npm run lint`
+- [x] 2.1 Build passes: `npm run build` — ce041fa
+- [x] 2.2 Lint passes: `npm run lint` — ce041fa
 
 #### Manual
 
-- [ ] 2.3 `/trips/{id}` loads grouped checklist with correct counter
-- [ ] 2.4 Checkbox toggle → immediate visual + persisted on reload
-- [ ] 2.5 Uncheck → visual reverts + persisted on reload
-- [ ] 2.6 Delete item → removed from UI and DB
-- [ ] 2.7 Add item with existing category → correct group, `source='user'`
-- [ ] 2.8 Add item with "Inne" → "Inne" group
-- [ ] 2.9 Unknown trip ID → redirect to dashboard
+- [x] 2.3 `/trips/{id}` loads grouped checklist with correct counter — ce041fa
+- [x] 2.4 Checkbox toggle → immediate visual + persisted on reload — ce041fa
+- [x] 2.5 Uncheck → visual reverts + persisted on reload — ce041fa
+- [x] 2.6 Delete item → removed from UI and DB — ce041fa
+- [x] 2.7 Add item with existing category → correct group, `source='user'` — ce041fa
+- [x] 2.8 Add item with "Inne" → "Inne" group — ce041fa
+- [x] 2.9 Unknown trip ID → redirect to dashboard — ce041fa
 
 ### Phase 3: Dashboard Plan List + Generation Redirect
 
 #### Automated
 
-- [ ] 3.1 Build passes: `npm run build`
-- [ ] 3.2 Lint passes: `npm run lint`
+- [x] 3.1 Build passes: `npm run build`
+- [x] 3.2 Lint passes: `npm run lint`
 
 #### Manual
 
-- [ ] 3.3 Submit form → redirect to `/trips/{id}` with checklist visible
-- [ ] 3.4 Dashboard shows plan list with correct cards
-- [ ] 3.5 Card click → correct detail page
-- [ ] 3.6 "Nowy plan" → `/trips/new`
-- [ ] 3.7 Dashboard empty state for user with no plans
+- [x] 3.3 Submit form → redirect to `/trips/{id}` with checklist visible
+- [x] 3.4 Dashboard shows plan list with correct cards
+- [x] 3.5 Card click → correct detail page
+- [x] 3.6 "Nowy plan" → `/trips/new`
+- [x] 3.7 Dashboard empty state for user with no plans

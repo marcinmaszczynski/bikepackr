@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import { parseMarkdownToItems } from "@/lib/checklist-parser";
 
-type Phase = "form" | "streaming" | "verifying" | "success" | "error";
-
-interface GroupedCategory {
-  category: string;
-  items: string[];
-}
+type Phase = "form" | "streaming" | "verifying" | "error";
 
 const inputClass =
   "w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-colors";
@@ -16,7 +10,6 @@ const labelClass = "mb-1 block text-sm text-blue-100/80";
 export function TripContextForm(): React.JSX.Element {
   const [phase, setPhase] = useState<Phase>("form");
   const [streamedText, setStreamedText] = useState("");
-  const [parsedItems, setParsedItems] = useState<GroupedCategory[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -76,17 +69,7 @@ export function TripContextForm(): React.JSX.Element {
       const countData = (await countRes.json()) as { count: number };
 
       if (countData.count > 0) {
-        setStreamedText((current) => {
-          const flat = parseMarkdownToItems(current);
-          const groupMap = flat.reduce<Record<string, string[]>>((acc, { name, category }) => {
-            (acc[category] ??= []).push(name);
-            return acc;
-          }, {});
-          const grouped = Object.entries(groupMap).map(([cat, items]) => ({ category: cat, items }));
-          setParsedItems(grouped);
-          return current;
-        });
-        setPhase("success");
+        window.location.href = `/trips/${fetchedTripId}`;
       } else {
         setPhase("error");
         setErrorMessage("Nie udało się zapisać checklisty. Poniżej znajdziesz wygenerowany tekst.");
@@ -109,42 +92,6 @@ export function TripContextForm(): React.JSX.Element {
           {streamedText}
           {phase === "streaming" && <span className="animate-pulse">▋</span>}
         </pre>
-      </div>
-    );
-  }
-
-  if (phase === "success") {
-    const totalItems = parsedItems.reduce((sum, g) => sum + g.items.length, 0);
-    return (
-      <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-white">Twoja checklista</h2>
-          <span className="rounded-full bg-purple-600/30 px-3 py-1 text-sm text-purple-200">{totalItems} pozycji</span>
-        </div>
-        {parsedItems.map(({ category, items }) => (
-          <div key={category}>
-            <h3 className="mb-2 text-sm font-semibold tracking-wide text-blue-200/70 uppercase">{category}</h3>
-            <ul className="space-y-1">
-              {items.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-white/90">
-                  <span className="mt-1 size-1.5 shrink-0 rounded-full bg-purple-400" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-        <p className="text-xs text-white/40">Lista wygenerowana przez AI — może być niepełna.</p>
-        <button
-          onClick={() => {
-            setPhase("form");
-            setStreamedText("");
-            setParsedItems([]);
-          }}
-          className="text-sm text-purple-300 hover:underline"
-        >
-          Wygeneruj nową checklistę
-        </button>
       </div>
     );
   }
