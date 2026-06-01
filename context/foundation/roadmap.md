@@ -3,7 +3,7 @@ project: Bikepackr
 version: 1
 status: draft
 created: 2026-05-25
-updated: 2026-05-27
+updated: 2026-06-01
 prd_version: 1
 main_goal: speed
 top_blocker: decisions
@@ -32,7 +32,7 @@ Bikepackr rozwiązuje konkretny problem bikepackerów: każdy wyjazd wymaga dopa
 | S-01  | first-gated-generation  | wypełnić kontekst wyjazdu i zobaczyć checklistę z AI              | F-01, F-02    | US-01, FR-005, FR-006     | done     |
 | S-02  | checklist-edit-and-pack | edytować checklistę i zaznaczać pozycje jako spakowane            | S-01          | FR-007, FR-008            | proposed |
 | S-03  | plan-library            | wrócić do dowolnego planu, przeglądać i usuwać plany              | S-01          | FR-009, FR-011            | proposed |
-| S-04  | trip-rating             | ocenić plan przed wyjazdem i po powrocie (skala 1–6)              | S-01          | FR-010                    | proposed |
+| S-04  | trip-rating             | ocenić plan przed wyjazdem i po powrocie (skala 1–6)              | S-01          | FR-010                    | done     |
 | S-05  | user-profile-edit       | zarejestrować konto, zalogować się i edytować profil              | —             | FR-001, FR-002, FR-004    | ready    |
 
 ## Streams
@@ -147,7 +147,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Unknowns:**
   - Kiedy i jak wyświetlać prompt do post-trip oceny? Czy wystarczy data startu wyjazdu z kontekstu jako trigger? — Owner: Marcin. Block: no.
 - **Risk:** Ten slice bezpośrednio obsługuje główny Success Criterion (75% planów z oceną ≥ 4) — bez oceniania nie ma pomiaru głównego wskaźnika produktu; nie parkuj tego za S-03.
-- **Status:** proposed
+- **Status:** done
 
 ---
 
@@ -206,3 +206,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **F-02: (foundation) SDK AI wybrany, streaming na Workers przetestowany** — Archived 2026-05-27 → `context/archive/2026-05-26-ai-generation-scaffold/`. Lesson: —.
 - **F-01: (foundation) tabele DB dla planów i pozycji checklisty gotowe** — Archived 2026-05-27 → `context/archive/2026-05-26-trip-plan-schema/`. Lesson: —.
 - **S-01: wypełnić kontekst wyjazdu i zobaczyć checklistę z AI** — Archived 2026-05-27 → `context/archive/2026-05-27-first-gated-generation/`. Lesson: —.
+- **S-04: ocenić plan przed wyjazdem i po powrocie (skala 1–6)** — Archived 2026-06-01 → `context/archive/2026-06-01-trip-rating/`. Lesson: —.
