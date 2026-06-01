@@ -182,26 +182,26 @@ const ratingValue = isPastTrip ? trip.post_trip_rating : trip.pre_trip_rating;
 
 #### Automated
 
-- [x] 1.1 `npm run lint` przechodzi bez błędów
-- [x] 1.2 `npm run build` kończy się sukcesem
+- [x] 1.1 `npm run lint` przechodzi bez błędów — 7b1d5f5
+- [x] 1.2 `npm run build` kończy się sukcesem — 7b1d5f5
 
 #### Manual
 
-- [x] 1.3 PATCH z `{ pre_trip_rating: 4 }` zwraca 200
-- [x] 1.4 PATCH z wartością spoza zakresu zwraca 400
-- [x] 1.5 PATCH bez sesji zwraca 401
+- [x] 1.3 PATCH z `{ pre_trip_rating: 4 }` zwraca 200 — 7b1d5f5
+- [x] 1.4 PATCH z wartością spoza zakresu zwraca 400 — 7b1d5f5
+- [x] 1.5 PATCH bez sesji zwraca 401 — 7b1d5f5
 
 ### Phase 2: TripRating component + ChecklistView integration
 
 #### Automated
 
-- [ ] 2.1 `npm run lint` przechodzi bez błędów
-- [ ] 2.2 `npm run build` kończy się sukcesem
+- [x] 2.1 `npm run lint` przechodzi bez błędów
+- [x] 2.2 `npm run build` kończy się sukcesem
 
 #### Manual
 
-- [ ] 2.3 Trip z przyszłą datą → widget „przed wyjazdem" widoczny
-- [ ] 2.4 Trip z przeszłą datą → widget „po powrocie" widoczny
-- [ ] 2.5 Kliknięcie gwiazdki → persystuje po odświeżeniu
-- [ ] 2.6 Hover → preview fill poprawny
-- [ ] 2.7 Błąd API → error banner i rollback gwiazdek
+- [x] 2.3 Trip z przyszłą datą → widget „przed wyjazdem" widoczny
+- [x] 2.4 Trip z przeszłą datą → widget „po powrocie" widoczny
+- [x] 2.5 Kliknięcie gwiazdki → persystuje po odświeżeniu
+- [x] 2.6 Hover → preview fill poprawny
+- [x] 2.7 Błąd API → error banner i rollback gwiazdek
