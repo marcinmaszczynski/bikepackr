@@ -214,8 +214,8 @@ Update dashboard to show a plan list with "Nowy plan" entry point. Update TripCo
 
 #### Automated
 
-- [x] 1.1 Build passes: `npm run build`
-- [x] 1.2 Lint passes: `npm run lint`
+- [x] 1.1 Build passes: `npm run build` — 3c80351
+- [x] 1.2 Lint passes: `npm run lint` — 3c80351
 
 #### Manual
 
@@ -230,8 +230,8 @@ Update dashboard to show a plan list with "Nowy plan" entry point. Update TripCo
 
 #### Automated
 
-- [ ] 2.1 Build passes: `npm run build`
-- [ ] 2.2 Lint passes: `npm run lint`
+- [x] 2.1 Build passes: `npm run build`
+- [x] 2.2 Lint passes: `npm run lint`
 
 #### Manual
 

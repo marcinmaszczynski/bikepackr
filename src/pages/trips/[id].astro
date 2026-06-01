@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ChecklistView } from "@/components/ChecklistView";
+import { createClient } from "@/lib/supabase";
+
+const supabase = createClient(Astro.request.headers, Astro.cookies);
+if (!supabase) {
+  return Astro.redirect("/dashboard");
+}
+
+const id = Astro.params.id;
+if (!id) {
+  return Astro.redirect("/dashboard");
+}
+
+const { data: trip, error: tripError } = await supabase.from("trips").select("*").eq("id", id).single();
+
+if (tripError) {
+  return Astro.redirect("/dashboard");
+}
+
+const { data: items } = await supabase
+  .from("checklist_items")
+  .select("*")
+  .eq("trip_id", id)
+  .order("created_at", { ascending: true });
+---
+
+<Layout title={`${trip.title ?? "Plan"} — Bikepackr`}>
+  <div class="bg-cosmic flex min-h-screen items-start justify-center p-4 py-8">
+    <div class="w-full max-w-lg rounded-2xl border border-white/10 bg-white/10 p-8 text-white backdrop-blur-xl">
+      <ChecklistView client:load trip={trip} initialItems={items ?? []} />
+    </div>
+  </div>
+</Layout>
