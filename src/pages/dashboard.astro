@@ -1,14 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { createClient } from "@/lib/supabase";
-
-const accommodationLabels: Record<string, string> = {
-  hotel: "Hotel / Pensjonat",
-  tent: "Namiot",
-  hammock: "Hamak",
-  bivy: "Bivy bag",
-  hostel: "Hostel / Schronisko",
-};
+import { PlanList } from "@/components/PlanList";
 
 const supabase = createClient(Astro.request.headers, Astro.cookies);
 if (!supabase) return Astro.redirect("/");
@@ -37,32 +30,7 @@ const trips =
         </a>
       </div>
 
-      {
-        trips.length === 0 ? (
-          <div class="rounded-2xl border border-white/10 bg-white/10 p-8 text-center backdrop-blur-xl">
-            <p class="text-blue-100/60">Nie masz jeszcze żadnych planów.</p>
-            <a href="/trips/new" class="mt-4 inline-block text-sm text-purple-300 hover:underline">
-              Wygeneruj swój pierwszy plan →
-            </a>
-          </div>
-        ) : (
-          <ul class="space-y-3">
-            {trips.map((trip) => (
-              <li>
-                <a
-                  href={`/trips/${trip.id}`}
-                  class="block rounded-2xl border border-white/10 bg-white/10 p-5 text-white backdrop-blur-xl transition-colors hover:bg-white/20"
-                >
-                  <p class="font-semibold">{trip.title ?? "Plan bez nazwy"}</p>
-                  <p class="mt-1 text-sm text-blue-100/60">
-                    {trip.start_date} · {accommodationLabels[trip.accommodation_type] ?? trip.accommodation_type}
-                  </p>
-                </a>
-              </li>
-            ))}
-          </ul>
-        )
-      }
+      <PlanList initialTrips={trips} client:load />
 
       <form method="POST" action="/api/auth/signout" class="text-center">
         <button
