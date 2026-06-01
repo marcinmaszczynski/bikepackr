@@ -247,13 +247,13 @@ Update dashboard to show a plan list with "Nowy plan" entry point. Update TripCo
 
 #### Automated
 
-- [x] 3.1 Build passes: `npm run build`
-- [x] 3.2 Lint passes: `npm run lint`
+- [x] 3.1 Build passes: `npm run build` — e8fd298
+- [x] 3.2 Lint passes: `npm run lint` — e8fd298
 
 #### Manual
 
-- [x] 3.3 Submit form → redirect to `/trips/{id}` with checklist visible
-- [x] 3.4 Dashboard shows plan list with correct cards
-- [x] 3.5 Card click → correct detail page
-- [x] 3.6 "Nowy plan" → `/trips/new`
-- [x] 3.7 Dashboard empty state for user with no plans
+- [x] 3.3 Submit form → redirect to `/trips/{id}` with checklist visible — e8fd298
+- [x] 3.4 Dashboard shows plan list with correct cards — e8fd298
+- [x] 3.5 Card click → correct detail page — e8fd298
+- [x] 3.6 "Nowy plan" → `/trips/new` — e8fd298
+- [x] 3.7 Dashboard empty state for user with no plans — e8fd298
