@@ -157,8 +157,8 @@ Wydzielić karty planów z `dashboard.astro` do nowego komponentu `PlanList.tsx`
 
 #### Automated
 
-- [x] 2.1 Build przechodzi: `npm run build`
-- [x] 2.2 Lint przechodzi: `npm run lint`
+- [x] 2.1 Build przechodzi: `npm run build` — 02e19f9
+- [x] 2.2 Lint przechodzi: `npm run lint` — 02e19f9
 
 #### Manual
 
