@@ -195,13 +195,13 @@ const ratingValue = isPastTrip ? trip.post_trip_rating : trip.pre_trip_rating;
 
 #### Automated
 
-- [x] 2.1 `npm run lint` przechodzi bez błędów
-- [x] 2.2 `npm run build` kończy się sukcesem
+- [x] 2.1 `npm run lint` przechodzi bez błędów — ad7e3f3
+- [x] 2.2 `npm run build` kończy się sukcesem — ad7e3f3
 
 #### Manual
 
-- [x] 2.3 Trip z przyszłą datą → widget „przed wyjazdem" widoczny
-- [x] 2.4 Trip z przeszłą datą → widget „po powrocie" widoczny
-- [x] 2.5 Kliknięcie gwiazdki → persystuje po odświeżeniu
-- [x] 2.6 Hover → preview fill poprawny
-- [x] 2.7 Błąd API → error banner i rollback gwiazdek
+- [x] 2.3 Trip z przyszłą datą → widget „przed wyjazdem" widoczny — ad7e3f3
+- [x] 2.4 Trip z przeszłą datą → widget „po powrocie" widoczny — ad7e3f3
+- [x] 2.5 Kliknięcie gwiazdki → persystuje po odświeżeniu — ad7e3f3
+- [x] 2.6 Hover → preview fill poprawny — ad7e3f3
+- [x] 2.7 Błąd API → error banner i rollback gwiazdek — ad7e3f3
