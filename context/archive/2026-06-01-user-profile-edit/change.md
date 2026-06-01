@@ -1,10 +1,10 @@
 ---
 change_id: user-profile-edit
 title: User profile edit
-status: implemented
+status: archived
 created: 2026-06-01
 updated: 2026-06-01
-archived_at: null
+archived_at: 2026-06-01T19:50:12Z
 ---
 
 ## Notes

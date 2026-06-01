@@ -33,7 +33,7 @@ Bikepackr rozwiązuje konkretny problem bikepackerów: każdy wyjazd wymaga dopa
 | S-02  | checklist-edit-and-pack | edytować checklistę i zaznaczać pozycje jako spakowane            | S-01          | FR-007, FR-008            | done   |
 | S-03  | plan-library            | wrócić do dowolnego planu, przeglądać i usuwać plany              | S-01          | FR-009, FR-011            | done   |
 | S-04  | trip-rating             | ocenić plan przed wyjazdem i po powrocie (skala 1–6)              | S-01          | FR-010                    | done   |
-| S-05  | user-profile-edit       | zarejestrować konto, zalogować się i edytować profil              | —             | FR-001, FR-002, FR-004    | ready  |
+| S-05  | user-profile-edit       | zarejestrować konto, zalogować się i edytować profil              | —             | FR-001, FR-002, FR-004    | done   |
 
 ## Streams
 
@@ -162,7 +162,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Unknowns:**
   - Scaffold auth (rejestracja, logowanie, baner weryfikacyjny) jest obecny w kodzie — czy interfejs spełnia wymogi FR-001/FR-002 end-to-end (weryfikacja nie blokuje, baner widoczny)? — Owner: Marcin. Block: no.
 - **Risk:** Auth istnieje w scaffoldzie, ale nie był end-to-end testowany; S-05 jest okazją do zamknięcia i weryfikacji całego flow przed S-01 — odkrywanie problemów auth w trakcie S-01 kosztuje drożej.
-- **Status:** ready
+- **Status:** done
 
 ---
 
@@ -209,3 +209,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **S-02: edytować checklistę i zaznaczać pozycje jako spakowane** — Archived 2026-06-01 → `context/archive/2026-06-01-checklist-edit-and-pack/`. Lesson: —.
 - **S-03: wrócić do dowolnego wcześniej stworzonego planu, przeglądać jego zawartość i usunąć plan** — Archived 2026-06-01 → `context/archive/2026-06-01-plan-library/`. Lesson: —.
 - **S-04: ocenić plan przed wyjazdem i po powrocie (skala 1–6)** — Archived 2026-06-01 → `context/archive/2026-06-01-trip-rating/`. Lesson: —.
+- **S-05: zarejestrować konto, zalogować się i edytować profil** — Archived 2026-06-01 → `context/archive/2026-06-01-user-profile-edit/`. Lesson: —.
