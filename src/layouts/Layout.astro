@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title = "10x Astro Starter" } = Astro.props;
+const { user } = Astro.locals;
 ---
 
 <!doctype html>
@@ -34,6 +35,14 @@ const { title = "10x Astro Starter" } = Astro.props;
           )}
         </Banner>
       ))
+    }
+    {
+      user && !user.email_confirmed_at && (
+        <Banner variant="warning">
+          <strong>Potwierdź swój adres email.</strong> Wysłaliśmy wiadomość na {user.email} — kliknij link w mailu, aby
+          aktywować konto.
+        </Banner>
+      )
     }
     <slot />
   </body>

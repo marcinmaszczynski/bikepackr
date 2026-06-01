@@ -16,5 +16,10 @@ export const POST: APIRoute = async (context) => {
     return context.redirect(`/auth/signup?error=${encodeURIComponent(error.message)}`);
   }
 
-  return context.redirect("/auth/confirm-email");
+  // signUp may return session: null when email confirmations are enabled in Supabase.
+  // Sign in immediately so the user gets a session cookie and can access the app
+  // without waiting for email confirmation (per PRD: verification is sent but does not block access).
+  await supabase.auth.signInWithPassword({ email, password });
+
+  return context.redirect("/dashboard");
 };
