@@ -1,10 +1,10 @@
 ---
 change_id: checklist-edit-and-pack
 title: Checklist edit and pack
-status: impl_reviewed
+status: archived
 created: 2026-06-01
 updated: 2026-06-01
-archived_at: null
+archived_at: 2026-06-01T18:02:29Z
 ---
 
 ## Notes
