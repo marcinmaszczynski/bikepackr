@@ -220,14 +220,14 @@ Brak migracji DB. Display name trafia do `auth.users.raw_user_meta_data` przez S
 
 #### Automated
 
-- [x] 2.1 TypeScript nie zgłasza błędów: `npm run lint`
-- [x] 2.2 Build produkcyjny przechodzi: `npm run build`
+- [x] 2.1 TypeScript nie zgłasza błędów: `npm run lint` — ae2ddd7
+- [x] 2.2 Build produkcyjny przechodzi: `npm run build` — ae2ddd7
 
 #### Manual
 
-- [x] 2.3 `/profile` ładuje się z pre-wypełnionym display name
-- [x] 2.4 Zapisanie display name → Topbar pokazuje nową nazwę
-- [x] 2.5 Zmiana hasła z błędnym obecnym hasłem → komunikat błędu
-- [x] 2.6 Zmiana hasła poprawna → redirect z sukcesem; użytkownik pozostaje zalogowany
-- [x] 2.7 Email w Topbar jest linkiem do `/profile`
-- [x] 2.8 Pełne flow end-to-end: rejestracja → profil → zmiana hasła → re-login
+- [x] 2.3 `/profile` ładuje się z pre-wypełnionym display name — ae2ddd7
+- [x] 2.4 Zapisanie display name → Topbar pokazuje nową nazwę — ae2ddd7
+- [x] 2.5 Zmiana hasła z błędnym obecnym hasłem → komunikat błędu — ae2ddd7
+- [x] 2.6 Zmiana hasła poprawna → redirect z sukcesem; użytkownik pozostaje zalogowany — ae2ddd7
+- [x] 2.7 Email w Topbar jest linkiem do `/profile` — ae2ddd7
+- [x] 2.8 Pełne flow end-to-end: rejestracja → profil → zmiana hasła → re-login — ae2ddd7
