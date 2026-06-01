@@ -173,7 +173,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 | F-01       | trip-plan-schema        | [Foundation] Trip/plan DB schema + Supabase migrations      | done                  | Archived 2026-05-27                                         |
 | F-02       | ai-generation-scaffold  | [Foundation] AI SDK selection + streaming validation        | done                  | Archived 2026-05-27                                         |
 | S-01       | first-gated-generation  | [Slice ★] Trip context form → AI checklist generation       | done                  | Archived 2026-05-27                                         |
-| S-02       | checklist-edit-and-pack | [Slice] Checklist editing and pack-status toggle            | yes                   | Run `/10x-plan checklist-edit-and-pack`                     |
+| S-02       | checklist-edit-and-pack | [Slice] Checklist editing and pack-status toggle            | done                  | Archived 2026-06-01                                         |
 | S-03       | plan-library            | [Slice] Plan library — view and delete saved plans          | yes                   | Run `/10x-plan plan-library`                                |
 | S-04       | trip-rating             | [Slice] Pre-trip and post-trip plan rating (1–6 scale)      | yes                   | Run `/10x-plan trip-rating`; gates primary Success Criterion |
 | S-05       | user-profile-edit       | [Slice] User registration, login, and profile edit          | yes                   | Run `/10x-plan user-profile-edit`                           |
