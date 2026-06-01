@@ -25,15 +25,15 @@ Bikepackr rozwiązuje konkretny problem bikepackerów: każdy wyjazd wymaga dopa
 
 ## At a glance
 
-| ID    | Change ID               | Outcome (user can …)                                              | Prerequisites | PRD refs                  | Status   |
-| ----- | ----------------------- | ----------------------------------------------------------------- | ------------- | ------------------------- |----------|
-| F-01  | trip-plan-schema        | (foundation) tabele DB dla planów i pozycji checklisty gotowe     | —             | FR-005, FR-006, FR-009    | done     |
-| F-02  | ai-generation-scaffold  | (foundation) SDK AI wybrany, streaming na Workers przetestowany   | —             | FR-006                    | done     |
-| S-01  | first-gated-generation  | wypełnić kontekst wyjazdu i zobaczyć checklistę z AI              | F-01, F-02    | US-01, FR-005, FR-006     | done     |
-| S-02  | checklist-edit-and-pack | edytować checklistę i zaznaczać pozycje jako spakowane            | S-01          | FR-007, FR-008            | done     |
-| S-03  | plan-library            | wrócić do dowolnego planu, przeglądać i usuwać plany              | S-01          | FR-009, FR-011            | done     |
-| S-04  | trip-rating             | ocenić plan przed wyjazdem i po powrocie (skala 1–6)              | S-01          | FR-010                    | proposed |
-| S-05  | user-profile-edit       | zarejestrować konto, zalogować się i edytować profil              | —             | FR-001, FR-002, FR-004    | ready    |
+| ID    | Change ID               | Outcome (user can …)                                              | Prerequisites | PRD refs                  | Status |
+| ----- | ----------------------- | ----------------------------------------------------------------- | ------------- | ------------------------- |--------|
+| F-01  | trip-plan-schema        | (foundation) tabele DB dla planów i pozycji checklisty gotowe     | —             | FR-005, FR-006, FR-009    | done   |
+| F-02  | ai-generation-scaffold  | (foundation) SDK AI wybrany, streaming na Workers przetestowany   | —             | FR-006                    | done   |
+| S-01  | first-gated-generation  | wypełnić kontekst wyjazdu i zobaczyć checklistę z AI              | F-01, F-02    | US-01, FR-005, FR-006     | done   |
+| S-02  | checklist-edit-and-pack | edytować checklistę i zaznaczać pozycje jako spakowane            | S-01          | FR-007, FR-008            | done   |
+| S-03  | plan-library            | wrócić do dowolnego planu, przeglądać i usuwać plany              | S-01          | FR-009, FR-011            | done   |
+| S-04  | trip-rating             | ocenić plan przed wyjazdem i po powrocie (skala 1–6)              | S-01          | FR-010                    | done   |
+| S-05  | user-profile-edit       | zarejestrować konto, zalogować się i edytować profil              | —             | FR-001, FR-002, FR-004    | ready  |
 
 ## Streams
 
@@ -147,7 +147,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Unknowns:**
   - Kiedy i jak wyświetlać prompt do post-trip oceny? Czy wystarczy data startu wyjazdu z kontekstu jako trigger? — Owner: Marcin. Block: no.
 - **Risk:** Ten slice bezpośrednio obsługuje główny Success Criterion (75% planów z oceną ≥ 4) — bez oceniania nie ma pomiaru głównego wskaźnika produktu; nie parkuj tego za S-03.
-- **Status:** proposed
+- **Status:** done
 
 ---
 
@@ -208,3 +208,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **S-01: wypełnić kontekst wyjazdu i zobaczyć checklistę z AI** — Archived 2026-05-27 → `context/archive/2026-05-27-first-gated-generation/`. Lesson: —.
 - **S-02: edytować checklistę i zaznaczać pozycje jako spakowane** — Archived 2026-06-01 → `context/archive/2026-06-01-checklist-edit-and-pack/`. Lesson: —.
 - **S-03: wrócić do dowolnego wcześniej stworzonego planu, przeglądać jego zawartość i usunąć plan** — Archived 2026-06-01 → `context/archive/2026-06-01-plan-library/`. Lesson: —.
+- **S-04: ocenić plan przed wyjazdem i po powrocie (skala 1–6)** — Archived 2026-06-01 → `context/archive/2026-06-01-trip-rating/`. Lesson: —.

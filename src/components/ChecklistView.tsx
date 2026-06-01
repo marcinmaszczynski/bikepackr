@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import type { Trip, ChecklistItem } from "@/lib/supabase";
+import { TripRating } from "@/components/TripRating";
 
 const inputClass =
   "rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-colors";
@@ -174,6 +175,14 @@ export function ChecklistView({ trip, initialItems }: Props): React.JSX.Element 
           </button>
         </div>
       </form>
+
+      {(() => {
+        const isPastTrip = trip.start_date <= new Date().toISOString().slice(0, 10);
+        const ratingField = isPastTrip ? "post_trip_rating" : "pre_trip_rating";
+        const ratingLabel = isPastTrip ? "Ocena realizacji po powrocie" : "Ocena planu przed wyjazdem";
+        const ratingValue = isPastTrip ? trip.post_trip_rating : trip.pre_trip_rating;
+        return <TripRating tripId={trip.id} field={ratingField} initialRating={ratingValue} label={ratingLabel} />;
+      })()}
 
       <p className="text-xs text-white/40">Lista wygenerowana przez AI — może być niepełna.</p>
       <a href="/trips/new" className="text-sm text-purple-300 hover:underline">
