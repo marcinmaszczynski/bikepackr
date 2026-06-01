@@ -3,7 +3,7 @@ project: Bikepackr
 version: 1
 status: draft
 created: 2026-05-25
-updated: 2026-05-27
+updated: 2026-06-01
 prd_version: 1
 main_goal: speed
 top_blocker: decisions
@@ -30,7 +30,7 @@ Bikepackr rozwiązuje konkretny problem bikepackerów: każdy wyjazd wymaga dopa
 | F-01  | trip-plan-schema        | (foundation) tabele DB dla planów i pozycji checklisty gotowe     | —             | FR-005, FR-006, FR-009    | done     |
 | F-02  | ai-generation-scaffold  | (foundation) SDK AI wybrany, streaming na Workers przetestowany   | —             | FR-006                    | done     |
 | S-01  | first-gated-generation  | wypełnić kontekst wyjazdu i zobaczyć checklistę z AI              | F-01, F-02    | US-01, FR-005, FR-006     | done     |
-| S-02  | checklist-edit-and-pack | edytować checklistę i zaznaczać pozycje jako spakowane            | S-01          | FR-007, FR-008            | proposed |
+| S-02  | checklist-edit-and-pack | edytować checklistę i zaznaczać pozycje jako spakowane            | S-01          | FR-007, FR-008            | done     |
 | S-03  | plan-library            | wrócić do dowolnego planu, przeglądać i usuwać plany              | S-01          | FR-009, FR-011            | proposed |
 | S-04  | trip-rating             | ocenić plan przed wyjazdem i po powrocie (skala 1–6)              | S-01          | FR-010                    | proposed |
 | S-05  | user-profile-edit       | zarejestrować konto, zalogować się i edytować profil              | —             | FR-001, FR-002, FR-004    | ready    |
@@ -118,7 +118,7 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Optymistyczne aktualizacje stanu mogą wydłużyć implementację; preferuj round-trip do Supabase w MVP zamiast lokalnego stanu z synchronizacją.
-- **Status:** proposed
+- **Status:** done
 
 ---
 
@@ -170,19 +170,19 @@ Foundations below assume these are present and do NOT re-scaffold them.
 
 | Roadmap ID | Change ID               | Suggested issue title                                       | Ready for `/10x-plan` | Notes                                                       |
 | ---------- | ----------------------- | ----------------------------------------------------------- | --------------------- | ----------------------------------------------------------- |
-| F-01       | trip-plan-schema        | [Foundation] Trip/plan DB schema + Supabase migrations      | yes                   | Run `/10x-plan trip-plan-schema`                            |
-| F-02       | ai-generation-scaffold  | [Foundation] AI SDK selection + streaming validation        | no                    | Resolve 3 Unknowns first (SDK choice, rules encoding, streaming test) |
-| S-01       | first-gated-generation  | [Slice ★] Trip context form → AI checklist generation       | no                    | Depends on F-01 + F-02                                      |
-| S-02       | checklist-edit-and-pack | [Slice] Checklist editing and pack-status toggle            | no                    | Depends on S-01                                             |
-| S-03       | plan-library            | [Slice] Plan library — view and delete saved plans          | no                    | Depends on S-01                                             |
-| S-04       | trip-rating             | [Slice] Pre-trip and post-trip plan rating (1–6 scale)      | no                    | Depends on S-01; gates primary Success Criterion            |
+| F-01       | trip-plan-schema        | [Foundation] Trip/plan DB schema + Supabase migrations      | done                  | Archived 2026-05-27                                         |
+| F-02       | ai-generation-scaffold  | [Foundation] AI SDK selection + streaming validation        | done                  | Archived 2026-05-27                                         |
+| S-01       | first-gated-generation  | [Slice ★] Trip context form → AI checklist generation       | done                  | Archived 2026-05-27                                         |
+| S-02       | checklist-edit-and-pack | [Slice] Checklist editing and pack-status toggle            | yes                   | Run `/10x-plan checklist-edit-and-pack`                     |
+| S-03       | plan-library            | [Slice] Plan library — view and delete saved plans          | yes                   | Run `/10x-plan plan-library`                                |
+| S-04       | trip-rating             | [Slice] Pre-trip and post-trip plan rating (1–6 scale)      | yes                   | Run `/10x-plan trip-rating`; gates primary Success Criterion |
 | S-05       | user-profile-edit       | [Slice] User registration, login, and profile edit          | yes                   | Run `/10x-plan user-profile-edit`                           |
 
 ## Open Roadmap Questions
 
-1. **Który SDK AI wybrać: Anthropic SDK (bezpośredni) czy Vercel AI SDK?** — Owner: Marcin. Block: F-02 (i pośrednio S-01, gwiazda przewodnia).
-2. **Jak zakodować reguły sztywne: hardcoded w prompcie, osobny plik TS/JSON reguł, czy tabela w DB?** — Owner: Marcin. Block: F-02 i potencjalnie F-01 (jeśli reguły trafiają do DB, wpływa na schemat).
-3. **Niespójność w PRD — lot samolotem:** US-01 AC wymienia lot jako przykład reguły sztywnej; §Non-Goals odkłada „reguły przewozowe" do v2. Wymagane rozstrzygnięcie: czy prosty bool `lot samolotem = wyklucz kuchenki gazowe` jest w scope v1 jako część ogólnego systemu reguł sztywnych, czy w pełni parkowany? — Owner: Marcin. Block: F-02 (wpływa na prompt i reguły sztywne).
+1. ~~**Który SDK AI wybrać: Anthropic SDK (bezpośredni) czy Vercel AI SDK?**~~ — Rozstrzygnięte w F-02: Anthropic SDK bezpośrednio.
+2. ~~**Jak zakodować reguły sztywne: hardcoded w prompcie, osobny plik TS/JSON reguł, czy tabela w DB?**~~ — Rozstrzygnięte w F-02/S-01: plik TS z regułami.
+3. ~~**Niespójność w PRD — lot samolotem:**~~ — Rozstrzygnięte w S-01: prosty bool `lot samolotem = wyklucz kuchenki gazowe` włączony do reguł sztywnych v1.
 4. **Avatar profilu** (z PRD `## Open Questions`): shape-notes i FR-004 zgodnie wykluczają avatar ze scope MVP. Uznano za rozstrzygnięte — poza scope v1. Block: brak.
 
 ## Parked
@@ -206,3 +206,4 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **F-02: (foundation) SDK AI wybrany, streaming na Workers przetestowany** — Archived 2026-05-27 → `context/archive/2026-05-26-ai-generation-scaffold/`. Lesson: —.
 - **F-01: (foundation) tabele DB dla planów i pozycji checklisty gotowe** — Archived 2026-05-27 → `context/archive/2026-05-26-trip-plan-schema/`. Lesson: —.
 - **S-01: wypełnić kontekst wyjazdu i zobaczyć checklistę z AI** — Archived 2026-05-27 → `context/archive/2026-05-27-first-gated-generation/`. Lesson: —.
+- **S-02: edytować checklistę i zaznaczać pozycje jako spakowane** — Archived 2026-06-01 → `context/archive/2026-06-01-checklist-edit-and-pack/`. Lesson: —.
