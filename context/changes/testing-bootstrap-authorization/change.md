@@ -4,6 +4,7 @@ title: "Bootstrap + Authorization tests (Phase 1)"
 status: implementing
 created: 2026-06-02
 updated: 2026-06-02
+
 risks: [R1, R4]
 phase: 1
 test_plan: context/foundation/test-plan.md

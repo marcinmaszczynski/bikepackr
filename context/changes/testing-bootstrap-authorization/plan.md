@@ -315,8 +315,8 @@ Env vars (podaj przed `npm test` lub w `.env.test`):
 
 #### Automated
 
-- [x] 1.1 `npm test` uruchamia się bez błędu instalacji/konfiguracji
-- [x] 1.2 Smoke test przechodzi: `GET /` i `GET /auth/signin` zwracają 200
+- [x] 1.1 `npm test` uruchamia się bez błędu instalacji/konfiguracji — d6084a3
+- [x] 1.2 Smoke test przechodzi: `GET /` i `GET /auth/signin` zwracają 200 — d6084a3
 
 #### Manual
 
@@ -339,8 +339,8 @@ Env vars (podaj przed `npm test` lub w `.env.test`):
 
 #### Automated
 
-- [ ] 3.1 `npm test` — wszystkie 3 testy auth bypass przechodzą
-- [ ] 3.2 Status 302 i Location header zawiera `/auth/signin` dla każdej trasy
+- [x] 3.1 `npm test` — wszystkie 3 testy auth bypass przechodzą
+- [x] 3.2 Status 302 i Location header zawiera `/auth/signin` dla każdej trasy
 
 #### Manual
 
