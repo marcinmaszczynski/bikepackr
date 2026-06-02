@@ -320,20 +320,20 @@ Env vars (podaj przed `npm test` lub w `.env.test`):
 
 #### Manual
 
-- [x] 1.3 `npm run test:watch` działa w trybie watch
-- [x] 1.4 Auth helper zwraca niepuste cookie string po podaniu prawidłowych credentials
-- [x] 1.5 Admin helper tworzy i usuwa test usera bez błędu
+- [x] 1.3 `npm run test:watch` działa w trybie watch — 29d03e6
+- [x] 1.4 Auth helper zwraca niepuste cookie string po podaniu prawidłowych credentials — 29d03e6
+- [x] 1.5 Admin helper tworzy i usuwa test usera bez błędu — 29d03e6
 
 ### Phase 2: IDOR integration tests (R1)
 
 #### Automated
 
-- [x] 2.1 `npm test` — wszystkie 6 testów IDOR przechodzą
-- [x] 2.2 T1 verify: trip A nadal istnieje po próbie DELETE przez user B
+- [x] 2.1 `npm test` — wszystkie 6 testów IDOR przechodzą — 29d03e6
+- [x] 2.2 T1 verify: trip A nadal istnieje po próbie DELETE przez user B — 29d03e6
 
 #### Manual
 
-- [x] 2.3 Supabase Studio: tabela trips zawiera trip A po uruchomieniu testów
+- [x] 2.3 Supabase Studio: tabela trips zawiera trip A po uruchomieniu testów — 29d03e6
 
 ### Phase 3: Auth bypass integration tests (R4)
 
@@ -344,15 +344,15 @@ Env vars (podaj przed `npm test` lub w `.env.test`):
 
 #### Manual
 
-- [ ] 3.3 W przeglądarce: chroniony URL bez logowania → przekierowanie na stronę logowania
+- [x] 3.3 W przeglądarce: chroniony URL bez logowania → przekierowanie na stronę logowania
 
 ### Phase 4: Cookbook update
 
 #### Automated
 
-- [ ] 4.1 `npm run lint` przechodzi po edycji test-plan.md
+- [x] 4.1 `npm run lint` przechodzi po edycji test-plan.md
 
 #### Manual
 
-- [ ] 4.2 §6.1 i §6.2 zawierają realne ścieżki plików i komendy (nie TBD)
-- [ ] 4.3 §3 Phase 1 status to `complete`
+- [x] 4.2 §6.1 i §6.2 zawierają realne ścieżki plików i komendy (nie TBD)
+- [x] 4.3 §3 Phase 1 status to `complete`
