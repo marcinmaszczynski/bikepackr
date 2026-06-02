@@ -344,15 +344,15 @@ Env vars (podaj przed `npm test` lub w `.env.test`):
 
 #### Manual
 
-- [x] 3.3 W przeglądarce: chroniony URL bez logowania → przekierowanie na stronę logowania
+- [x] 3.3 W przeglądarce: chroniony URL bez logowania → przekierowanie na stronę logowania — 5260f37
 
 ### Phase 4: Cookbook update
 
 #### Automated
 
-- [x] 4.1 `npm run lint` przechodzi po edycji test-plan.md
+- [x] 4.1 `npm run lint` przechodzi po edycji test-plan.md — 5260f37
 
 #### Manual
 
-- [x] 4.2 §6.1 i §6.2 zawierają realne ścieżki plików i komendy (nie TBD)
-- [x] 4.3 §3 Phase 1 status to `complete`
+- [x] 4.2 §6.1 i §6.2 zawierają realne ścieżki plików i komendy (nie TBD) — 5260f37
+- [x] 4.3 §3 Phase 1 status to `complete` — 5260f37

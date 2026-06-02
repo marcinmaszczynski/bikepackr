@@ -1,7 +1,7 @@
 ---
 id: testing-bootstrap-authorization
 title: "Bootstrap + Authorization tests (Phase 1)"
-status: implementing
+status: implemented
 created: 2026-06-02
 updated: 2026-06-02
 
