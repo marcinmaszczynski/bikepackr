@@ -6,7 +6,7 @@ interface RequestOpts {
 }
 
 function buildHeaders(opts?: RequestOpts): Record<string, string> {
-  const headers: Record<string, string> = {};
+  const headers: Record<string, string> = { Origin: BASE_URL };
   if (opts?.cookies) headers.Cookie = opts.cookies;
   return headers;
 }

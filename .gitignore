@@ -15,7 +15,9 @@ pnpm-debug.log*
 
 # environment variables
 .env
+.env.local
 .env.production
+.env.test.local
 
 # cloudflare
 .dev.vars
@@ -30,6 +32,9 @@ pnpm-debug.log*
 # claude code — local settings and installed skills (reinstallable from .10x-cli-manifest.json)
 .claude/settings.local.json
 .claude/skills/
+
+# codex — installed skills (reinstallable from .10x-cli-manifest.json)
+.agents/skills/
 
 # personal notes
 my-notes.md

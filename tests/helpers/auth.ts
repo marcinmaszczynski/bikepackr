@@ -7,6 +7,7 @@ export async function signIn(email: string, password: string): Promise<string> {
 
   const response = await fetch(`${BASE_URL}/api/auth/signin`, {
     method: "POST",
+    headers: { Origin: BASE_URL },
     body: form,
     redirect: "manual",
   });

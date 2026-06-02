@@ -45,7 +45,7 @@ describe("R1 IDOR — user B cannot access user A resources", () => {
         title: "IDOR test trip",
         start_date: "2026-12-01",
         accommodation_type: "tent",
-        riding_philosophy: "fastlight",
+        riding_philosophy: "fast_and_light",
         region: "Alps",
         trip_duration_days: 7,
         flew_by_plane: false,

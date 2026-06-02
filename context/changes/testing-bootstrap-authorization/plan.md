@@ -320,27 +320,27 @@ Env vars (podaj przed `npm test` lub w `.env.test`):
 
 #### Manual
 
-- [ ] 1.3 `npm run test:watch` działa w trybie watch
-- [ ] 1.4 Auth helper zwraca niepuste cookie string po podaniu prawidłowych credentials
-- [ ] 1.5 Admin helper tworzy i usuwa test usera bez błędu
+- [x] 1.3 `npm run test:watch` działa w trybie watch
+- [x] 1.4 Auth helper zwraca niepuste cookie string po podaniu prawidłowych credentials
+- [x] 1.5 Admin helper tworzy i usuwa test usera bez błędu
 
 ### Phase 2: IDOR integration tests (R1)
 
 #### Automated
 
-- [ ] 2.1 `npm test` — wszystkie 6 testów IDOR przechodzą
-- [ ] 2.2 T1 verify: trip A nadal istnieje po próbie DELETE przez user B
+- [x] 2.1 `npm test` — wszystkie 6 testów IDOR przechodzą
+- [x] 2.2 T1 verify: trip A nadal istnieje po próbie DELETE przez user B
 
 #### Manual
 
-- [ ] 2.3 Supabase Studio: tabela trips zawiera trip A po uruchomieniu testów
+- [x] 2.3 Supabase Studio: tabela trips zawiera trip A po uruchomieniu testów
 
 ### Phase 3: Auth bypass integration tests (R4)
 
 #### Automated
 
-- [x] 3.1 `npm test` — wszystkie 3 testy auth bypass przechodzą
-- [x] 3.2 Status 302 i Location header zawiera `/auth/signin` dla każdej trasy
+- [x] 3.1 `npm test` — wszystkie 3 testy auth bypass przechodzą — e49d0d9
+- [x] 3.2 Status 302 i Location header zawiera `/auth/signin` dla każdej trasy — e49d0d9
 
 #### Manual
 
