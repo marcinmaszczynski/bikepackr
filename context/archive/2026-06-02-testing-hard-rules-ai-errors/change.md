@@ -1,10 +1,10 @@
 ---
 change_id: testing-hard-rules-ai-errors
 title: Hard-rules unit tests and AI error path integration tests (Phase 2)
-status: implementing
+status: archived
 created: 2026-06-02
-updated: 2026-06-02
-archived_at: null
+updated: 2026-06-08
+archived_at: 2026-06-08T20:39:21Z
 ---
 
 ## Notes
