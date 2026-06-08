@@ -1,0 +1,20 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); FILE=$(echo \"$INPUT\" | jq -r '.tool_input.file_path // empty'); if [[ -n \"$FILE\" && \"$FILE\" =~ \\.(ts|tsx|astro)$ ]]; then npx eslint --fix \"$FILE\" 2>&1 || exit 2; fi"
+          },
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); FILE=$(echo \"$INPUT\" | jq -r '.tool_input.file_path // empty'); if [[ -n \"$FILE\" && \"$FILE\" =~ \\.(ts|tsx|astro)$ ]]; then npx tsc --noEmit 2>&1 || exit 2; fi",
+            "timeout": 30000
+          }
+        ]
+      }
+    ]
+  }
+}
