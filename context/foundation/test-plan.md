@@ -37,6 +37,7 @@ Ryzyka posortowane Impact × Likelihood. Chronić High × High najpierw.
 | R4 | Bypass auth — niezalogowany użytkownik dociera do chronionego zasobu przez regresję w middleware | High | Medium | PRD §Access Control ("Niezalogowany użytkownik trafiający na chroniony zasób jest przekierowany na stronę logowania"), hot-spot dir `src/pages/api/` (32 zmiany/30d), hot-spot `src/middleware.ts` (3 zmiany/30d) |
 | R5 | Zmiana hasła bez weryfikacji starego hasła — wektor przejęcia konta przy współdzielonej sesji lub skradzionym tokenie | High | Medium | PRD FR-004 (zmiana hasła jako must-have), archive `user-profile-edit` (Critical Impl. Details: re-auth wymagany przed `updateUser`) |
 | R6 | Nieprawidłowy flow oceniania — ocena nie jest zapisywana lub widget pre/post-trip nie reaguje na datę startu wyjazdu | High | Low | PRD §Success Criteria (primary metric: 75% planów z oceną ≥ 4), FR-010 (dwa etapy oceniania, oba opcjonalne), S-04 roadmap (bezpośrednio obsługuje główny KPI) |
+| R7 | Regresja krytycznej ścieżki E2E — użytkownik nie może przejść: logowanie → formularz kontekstu → wygenerowana checklista | High | Medium | Q1 (wywiad: AI generation top concern), Q4 (wywiad: E2E gap), CLAUDE.md (nowe reguły E2E), hot-spot dir `src/pages/api/generate/` (2 zmiany/30d) |
 
 ### Risk Response Guidance
 
@@ -48,6 +49,7 @@ Ryzyka posortowane Impact × Likelihood. Chronić High × High najpierw.
 | R4 | GET /dashboard, /trips/[id], /profile bez session cookie → redirect /auth/signin; żaden chroniony zasób nie jest zwrócony | "Middleware istnieje" ≠ pokrywa każdą klasę nowo dodanej chronionej ścieżki | PROTECTED_ROUTES lista i mechanizm dodawania nowych tras; czy middleware działa dla zagnieżdżonych parametryzowanych tras | Integration (HTTP bez cookie do każdej klasy chronionej trasy) | Mockowanie middleware zamiast realnego HTTP request cycle |
 | R5 | POST do endpointu zmiany hasła z błędnym starym hasłem → 400/401; z poprawnym starym hasłem → 200 i hasło faktycznie zmienione w Supabase | "`updateUser` jest wywołany" ≠ `signInWithPassword` jest wywołany i zweryfikowany **przed** `updateUser` | Kolejność operacji w endpoincie change-password; jak błąd re-auth jest propagowany do klienta | Integration z realną instancją Supabase test (lub local Supabase) | Unit test mocka Supabase — mock zawsze zwraca success |
 | R6 | POST /api/trips/[id]/rating → score zapisany w DB; widget pre-trip widoczny gdy current_date < start_date; widget post-trip widoczny gdy current_date ≥ start_date | "Widget wyrenderował się" ≠ logika daty jest poprawna; "score w stanie lokalnym" ≠ score persystuje po reload | Gdzie i jak przechowywany jest score (kolumny na rekordzie trips?); jak start_date przekazywany jest do logiki date-gating | Integration (API endpoint) + unit (logika date-gating jako pure function) | Snapshot test widgetu bez testu logiki; testowanie przez daty bieżące zamiast parametryzowanych |
+| R7 | Zalogowany user → formularz → streaming → ≥1 element → URL `/trips/[id]` | "API zielony" ≠ "Astro island hydratuje + streaming UI w przeglądarce" | Ścieżka pełna w przeglądarce od logowania do wygenerowanej checklisty | Playwright E2E | `waitForTimeout()`, brak cleanup, over-testing UI |
 
 ---
 
@@ -58,9 +60,10 @@ Orchestrator czyta ten status table przy każdym wywołaniu `/10x-test-plan`. S�
 | # | Faza | Cel | Ryzyka | Typy testów | Change folder | Status |
 |---|---|---|---|---|---|---|
 | 1 | Bootstrap + Authorization | Bootstrapuje test runner (Vitest lub ekwiwalent dla Workers); pierwsze integration testy pokrywające IDOR i auth bypass — najwyższe H×H ryzyka | R1, R4 | Integration (HTTP z 2 sesjami użytkowników), unit runner setup | context/changes/testing-bootstrap-authorization/ | complete |
-| 2 | Hard-rules + AI error paths | Unit coverage dla logiki hard-rules na wszystkich kombinacjach kontekstu; integration testy ścieżek błędów endpointu generowania | R2, R3 | Unit (pure TS, zero IO), integration (mock AI SDK) | — | not started |
+| 2 | Hard-rules + AI error paths | Unit coverage dla logiki hard-rules na wszystkich kombinacjach kontekstu; integration testy ścieżek błędów endpointu generowania | R2, R3 | Unit (pure TS, zero IO), integration (mock AI SDK) | context/changes/testing-hard-rules-ai-errors/ | implementing |
 | 3 | Security flows | Integration testy: zmiana hasła z i bez re-auth; flow oceniania (API persistence + date-gating logic) | R5, R6 | Integration | — | not started |
-| 4 | Quality gates wiring | Wdraża wymagane gate'y jako kroki CI; pre-commit hook dla szybkiej pętli lokalnej; aktualizuje §6 z finalnymi lokalizacjami i komendami | — | CI (GitHub Actions), local hook | — | not started |
+| 4 | E2E — krytyczne flow | `playwright.config.ts` + E2E test sign-in → generation (via `/10x-e2e` per CLAUDE.md) | R7, R3 (perspektywa przeglądarki) | Playwright E2E | — | not started |
+| 5 | Quality gates wiring | Wdraża wymagane gate'y jako kroki CI; pre-commit hook dla szybkiej pętli lokalnej; aktualizuje §6 z finalnymi lokalizacjami i komendami | — | CI (GitHub Actions), local hook | — | not started |
 
 ---
 
@@ -79,7 +82,7 @@ Orchestrator czyta ten status table przy każdym wywołaniu `/10x-test-plan`. S�
 **Stack grounding tools (current session):**
 - Docs: Context7 — nie dostępne w tej sesji; checked: 2026-06-02
 - Search: Exa.ai — nie dostępne w tej sesji; checked: 2026-06-02
-- Runtime/browser: Playwright MCP — nie dostępne; nie używane; checked: 2026-06-02
+- Runtime/browser: Playwright MCP dostępny (`playwright-cli`); checked: 2026-06-08
 - Provider/platform: Supabase MCP / GitHub MCP — nie dostępne; checked: 2026-06-02
 
 Rekomendacje oparte wyłącznie na lokalnym manifeście, CLAUDE.md i archiwum zmian.
@@ -93,7 +96,7 @@ Rekomendacje oparte wyłącznie na lokalnym manifeście, CLAUDE.md i archiwum zm
 | Lint (ESLint + type-check) | Statyczny | Wymagany | Każdy push/PR | Już wdrożony (`npm run lint`) |
 | Build | Kompilacja | Wymagany | Każdy push/PR | Już wdrożony (`npm run build`) |
 | Unit + Integration tests | Dynamiczny | Wymagany — `required after §3 Phase 1` | Każdy push/PR | Nie wdrożony — Phase 1 bootstrapuje |
-| E2e na krytycznych flow (auth + generowanie) | Dynamiczny | Zalecany — `required after §3 Phase 2` | PR do main | Nie wdrożony — Phase 2 ocenia zasadność |
+| E2E Playwright — krytyczne flow | Dynamiczny | Wymagany — `required after §3 Phase 4` | PR do main | Nie wdrożony — Phase 4 wdraża |
 | Pre-commit hook (lint + typecheck) | Lokalny | Zalecany lokalnie (nie substytut CI) | Przed każdym commitem | Nie wdrożony — Phase 4 wdraża |
 | Multimodal visual review | Selektywny | Opcjonalny — max 2 krytyczne ekrany (formularz kontekstu, widok checklisty) | Przy zmianach UI krytycznych ścieżek | Poza zakresem tego planu |
 
@@ -151,7 +154,10 @@ TBD — see §3 Phase 3. Cel: integration test weryfikujący że zmiana hasła b
 TBD — see §3 Phase 3. Cel: integration test API oceniania + unit test logiki daty pre/post-trip.
 
 ### 6.7 CI quality gates
-TBD — see §3 Phase 4. Cel: krok CI uruchamiający testy z Phase 1–3 przy każdym PR.
+TBD — see §3 Phase 5. Cel: krok CI uruchamiający testy z Phase 1–4 przy każdym PR.
+
+### 6.8 E2E — signin → generation flow
+TBD — see §3 Phase 4. Cel: Playwright E2E test sign-in → formularz kontekstu → streaming generowania → ≥1 element checklisty → URL `/trips/[id]`.
 
 ---
 
