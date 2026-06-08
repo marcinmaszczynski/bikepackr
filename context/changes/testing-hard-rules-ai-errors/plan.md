@@ -222,10 +222,10 @@ Aktualizuje `context/foundation/test-plan.md`: §6.3 (R2), §6.4 (R3) i §3 Phas
 ### Phase 1: R2 unit tests
 
 #### Automated
-- [x] 1.1 Utwórz tests/r2-hard-rules.test.ts z it.each T1–T6
+- [x] 1.1 Utwórz tests/r2-hard-rules.test.ts z it.each T1–T6 — 2120586
 
 #### Manual
-- [x] 1.2 Sprawdź oracle — asercje z tabeli research.md, nie z implementacji
+- [x] 1.2 Sprawdź oracle — asercje z tabeli research.md, nie z implementacji — 2120586
 
 ### Phase 2: R3a parser unit tests
 
