@@ -216,27 +216,27 @@ Generowanie testu E2E dla R7 przez skill `/10x-e2e`. Pętla PLAN→GENERATE→RE
 
 #### Automated
 
-- [x] 1.1 `@playwright/test` zainstalowany: `ls node_modules/@playwright/test`
-- [x] 1.2 `playwright.config.ts` istnieje: `test -f playwright.config.ts`
-- [x] 1.3 Chromium zainstalowany: `npx playwright install chromium --with-deps`
-- [x] 1.4 `seed.spec.ts` zielony: `npm run test:e2e -- tests/e2e/seed.spec.ts`
+- [x] 1.1 `@playwright/test` zainstalowany: `ls node_modules/@playwright/test` — 7c6faff
+- [x] 1.2 `playwright.config.ts` istnieje: `test -f playwright.config.ts` — 7c6faff
+- [x] 1.3 Chromium zainstalowany: `npx playwright install chromium --with-deps` — 7c6faff
+- [x] 1.4 `seed.spec.ts` zielony: `npm run test:e2e -- tests/e2e/seed.spec.ts` — 7c6faff
 
 #### Manual
 
-- [x] 1.5 `npm run test:e2e -- tests/e2e/seed.spec.ts` kończy się `1 passed`
-- [x] 1.6 `tests/e2e/.auth/test-user.json` powstaje i jest usuwany
-- [x] 1.7 `.gitignore` wyklucza `.auth/`
+- [x] 1.5 `npm run test:e2e -- tests/e2e/seed.spec.ts` kończy się `1 passed` — 7c6faff
+- [x] 1.6 `tests/e2e/.auth/test-user.json` powstaje i jest usuwany — 7c6faff
+- [x] 1.7 `.gitignore` wyklucza `.auth/` — 7c6faff
 
 ### Phase 2: E2E test R7
 
 #### Automated
 
-- [ ] 2.1 `test -f tests/e2e/critical-flow.spec.ts`
-- [ ] 2.2 `npm run test:e2e -- tests/e2e/critical-flow.spec.ts` → `1 passed`
-- [ ] 2.3 Deliberate break: generate endpoint error → test czerwony
+- [x] 2.1 `test -f tests/e2e/critical-flow.spec.ts`
+- [x] 2.2 `npm run test:e2e -- tests/e2e/critical-flow.spec.ts` → `1 passed`
+- [x] 2.3 Deliberate break: generate endpoint error → test czerwony
 
 #### Manual
 
-- [ ] 2.4 HTML report pokazuje zrzut ekranu checklisty na `/trips/[id]`
-- [ ] 2.5 Test user usunięty po teście
-- [ ] 2.6 Brak osieroconych danych w lokalnej bazie
+- [x] 2.4 HTML report pokazuje zrzut ekranu checklisty na `/trips/[id]`
+- [x] 2.5 Test user usunięty po teście
+- [x] 2.6 Brak osieroconych danych w lokalnej bazie
