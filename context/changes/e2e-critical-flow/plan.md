@@ -231,12 +231,12 @@ Generowanie testu E2E dla R7 przez skill `/10x-e2e`. Pętla PLAN→GENERATE→RE
 
 #### Automated
 
-- [x] 2.1 `test -f tests/e2e/critical-flow.spec.ts`
-- [x] 2.2 `npm run test:e2e -- tests/e2e/critical-flow.spec.ts` → `1 passed`
-- [x] 2.3 Deliberate break: generate endpoint error → test czerwony
+- [x] 2.1 `test -f tests/e2e/critical-flow.spec.ts` — 9aee094
+- [x] 2.2 `npm run test:e2e -- tests/e2e/critical-flow.spec.ts` → `1 passed` — 9aee094
+- [x] 2.3 Deliberate break: generate endpoint error → test czerwony — 9aee094
 
 #### Manual
 
-- [x] 2.4 HTML report pokazuje zrzut ekranu checklisty na `/trips/[id]`
-- [x] 2.5 Test user usunięty po teście
-- [x] 2.6 Brak osieroconych danych w lokalnej bazie
+- [x] 2.4 HTML report pokazuje zrzut ekranu checklisty na `/trips/[id]` — 9aee094
+- [x] 2.5 Test user usunięty po teście — 9aee094
+- [x] 2.6 Brak osieroconych danych w lokalnej bazie — 9aee094
