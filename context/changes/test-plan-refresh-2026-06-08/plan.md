@@ -193,18 +193,18 @@ TBD — see §3 Phase 4. Cel: Playwright E2E test sign-in → formularz kontekst
 
 #### Automated
 
-- [x] 1.1 `test -s context/foundation/test-plan.md`
-- [x] 1.2 `grep -q "R7" context/foundation/test-plan.md`
-- [x] 1.3 `grep -q "implementing" context/foundation/test-plan.md`
-- [x] 1.4 `grep -q "E2E — krytyczne flow" context/foundation/test-plan.md`
-- [x] 1.5 `grep -q "| 5 |" context/foundation/test-plan.md`
-- [x] 1.6 `grep -q "6.8" context/foundation/test-plan.md`
-- [x] 1.7 `grep -q "checked: 2026-06-08" context/foundation/test-plan.md`
+- [x] 1.1 `test -s context/foundation/test-plan.md` — d5cdd52
+- [x] 1.2 `grep -q "R7" context/foundation/test-plan.md` — d5cdd52
+- [x] 1.3 `grep -q "implementing" context/foundation/test-plan.md` — d5cdd52
+- [x] 1.4 `grep -q "E2E — krytyczne flow" context/foundation/test-plan.md` — d5cdd52
+- [x] 1.5 `grep -q "| 5 |" context/foundation/test-plan.md` — d5cdd52
+- [x] 1.6 `grep -q "6.8" context/foundation/test-plan.md` — d5cdd52
+- [x] 1.7 `grep -q "checked: 2026-06-08" context/foundation/test-plan.md` — d5cdd52
 
 #### Manual
 
-- [x] 1.8 §2 Risk Map i Risk Response Guidance — R7 zgodny ze specyfikacją
-- [x] 1.9 §3 Rollout — poprawna numeracja Phase 1–5, statusy
-- [x] 1.10 §4 Stack — jeden wiersz Playwright MCP z datą 2026-06-08
-- [x] 1.11 §5 Quality Gates — stary wiersz E2E zastąpiony
-- [x] 1.12 §6.8 pod §6.7, format spójny
+- [x] 1.8 §2 Risk Map i Risk Response Guidance — R7 zgodny ze specyfikacją — d5cdd52
+- [x] 1.9 §3 Rollout — poprawna numeracja Phase 1–5, statusy — d5cdd52
+- [x] 1.10 §4 Stack — jeden wiersz Playwright MCP z datą 2026-06-08 — d5cdd52
+- [x] 1.11 §5 Quality Gates — stary wiersz E2E zastąpiony — d5cdd52
+- [x] 1.12 §6.8 pod §6.7, format spójny — d5cdd52

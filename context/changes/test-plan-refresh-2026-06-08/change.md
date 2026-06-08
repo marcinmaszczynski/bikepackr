@@ -1,7 +1,7 @@
 ---
 change_id: test-plan-refresh-2026-06-08
 title: Refresh test-plan.md — Phase 2 status, MCP grounding, R7 risk, new E2E phase
-status: implementing
+status: implemented
 created: 2026-06-08
 updated: 2026-06-08
 archived_at: null
