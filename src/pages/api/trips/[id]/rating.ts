@@ -35,9 +35,10 @@ export const PATCH: APIRoute = async (context) => {
     return new Response("Invalid rating field or value", { status: 400 });
   }
 
+  const updatePayload = field === "pre_trip_rating" ? { pre_trip_rating: value } : { post_trip_rating: value };
   const { data, error } = await supabase
     .from("trips")
-    .update({ [field]: value })
+    .update(updatePayload)
     .eq("id", tripId)
     .select("pre_trip_rating, post_trip_rating")
     .single();
