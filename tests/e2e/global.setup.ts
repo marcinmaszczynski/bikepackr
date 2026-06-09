@@ -10,9 +10,7 @@ const SERVICE_ROLE_KEY = process.env.TEST_SUPABASE_SERVICE_ROLE_KEY ?? "";
 
 setup("create E2E test user", async () => {
   if (!SERVICE_ROLE_KEY) {
-    throw new Error(
-      "TEST_SUPABASE_SERVICE_ROLE_KEY is not set. Run `supabase status` to get the service_role key.",
-    );
+    throw new Error("TEST_SUPABASE_SERVICE_ROLE_KEY is not set. Run `supabase status` to get the service_role key.");
   }
 
   const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, {
@@ -33,8 +31,5 @@ setup("create E2E test user", async () => {
   }
 
   fs.mkdirSync(path.dirname(AUTH_FILE), { recursive: true });
-  fs.writeFileSync(
-    AUTH_FILE,
-    JSON.stringify({ email, password, userId: data.user.id }),
-  );
+  fs.writeFileSync(AUTH_FILE, JSON.stringify({ email, password, userId: data.user.id }));
 });

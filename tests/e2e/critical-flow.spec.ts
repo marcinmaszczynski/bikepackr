@@ -11,13 +11,13 @@ import * as path from "path";
 const AUTH_FILE = path.resolve("tests/e2e/.auth/test-user.json");
 
 test.describe("R7: Critical path — sign-in → generation → checklist", () => {
-  test("R7: sign-in → context form → AI generation → checklist visible at /trips/[id]", async ({
-    page,
-  }) => {
+  test("R7: sign-in → context form → AI generation → checklist visible at /trips/[id]", async ({ page }) => {
     // --- Setup: read test user credentials from global.setup.ts output ---
-    const { email, password } = JSON.parse(
-      fs.readFileSync(AUTH_FILE, "utf-8"),
-    ) as { email: string; password: string; userId: string };
+    const { email, password } = JSON.parse(fs.readFileSync(AUTH_FILE, "utf-8")) as {
+      email: string;
+      password: string;
+      userId: string;
+    };
 
     let tripId: string | null = null;
 
@@ -55,14 +55,14 @@ test.describe("R7: Critical path — sign-in → generation → checklist", () =
       // navigationTimeout in playwright.config.ts is 60_000 — AI streaming takes 20-40s
       await page.waitForURL(
         (url) => {
-          const seg = url.pathname.match(/\/trips\/([^/]+)$/)?.[1];
+          const seg = /\/trips\/([^/]+)$/.exec(url.pathname)?.[1];
           return !!seg && seg !== "new";
         },
         { timeout: 60_000 },
       );
 
       // Extract trip ID from URL for cleanup
-      const urlMatch = page.url().match(/\/trips\/([^/?#]+)$/);
+      const urlMatch = /\/trips\/([^/?#]+)$/.exec(page.url());
       if (urlMatch) {
         tripId = urlMatch[1];
       }

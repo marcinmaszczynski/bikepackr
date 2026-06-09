@@ -13,7 +13,9 @@ teardown("delete E2E test user", async () => {
     return;
   }
 
-  const { userId } = JSON.parse(fs.readFileSync(AUTH_FILE, "utf-8"));
+  const { userId } = JSON.parse(fs.readFileSync(AUTH_FILE, "utf-8")) as {
+    userId: string;
+  };
 
   if (SERVICE_ROLE_KEY && userId) {
     const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, {

@@ -115,14 +115,21 @@ Minimum 10 pozycji łącznie.${hardRulesSection}`;
     onFinish: ({ text }) => {
       const items = parseMarkdownToItems(text);
       context.locals.cfContext.waitUntil(
-        Promise.resolve(supabase
-          .from("checklist_items")
-          .insert(
-            items.map((item) => ({ trip_id: tripId, name: item.name, category: item.category, source: "ai" as const })),
-          )
-          .then(({ error }) => {
-            if (error) console.error("checklist_items insert failed", error);
-          })),
+        Promise.resolve(
+          supabase
+            .from("checklist_items")
+            .insert(
+              items.map((item) => ({
+                trip_id: tripId,
+                name: item.name,
+                category: item.category,
+                source: "ai" as const,
+              })),
+            )
+            .then(({ error }) => {
+              if (error) console.error("checklist_items insert failed", error);
+            }),
+        ),
       );
     },
   });
