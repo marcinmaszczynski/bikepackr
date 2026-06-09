@@ -19,7 +19,7 @@ Schema is declared in `astro.config.mjs`. New secrets must be added there.
 return context.redirect(`/auth/signin?error=${encodeURIComponent(error.message)}`);
 ```
 
-**AI integration** — not yet scaffolded; Anthropic SDK or Vercel AI SDK to be added. AI calls belong in `src/pages/api/` endpoints, streamed via Cloudflare's streaming support.
+**AI integration** — uses Vercel AI SDK (`ai` + `@ai-sdk/anthropic`). AI calls live in `src/pages/api/` endpoints and stream via Cloudflare's streaming support. The `ANTHROPIC_API_KEY` secret must be declared in `astro.config.mjs` and set as a Cloudflare secret. See `src/pages/api/generate/checklist.ts` for the reference implementation.
 
 ## Project
 
@@ -44,9 +44,12 @@ npm run preview      # Preview production build
 npm run lint         # ESLint with type-checking
 npm run lint:fix     # Auto-fix ESLint issues
 npm run format       # Prettier
+npm run test         # Vitest unit/integration tests (run once)
+npm run test:watch   # Vitest in watch mode
+npm run test:e2e     # Playwright E2E tests
 ```
 
-No test runner is configured yet.
+Unit/integration tests live in `tests/*.test.ts` (Vitest). E2E tests live in `tests/e2e/*.spec.ts` (Playwright).
 
 ## Deployment
 
